@@ -1,0 +1,1743 @@
+[
+ {
+  "case": "Q1-A",
+  "question": "Q1",
+  "label": "set A",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.05294925000634976,
+  "neo_s": 0.6267595419776626,
+  "answer": [
+   [
+    1,
+    200000
+   ]
+  ]
+ },
+ {
+  "case": "Q1-B",
+  "question": "Q1",
+  "label": "set B",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.0012163329811301082,
+  "neo_s": 0.0330025419825688,
+  "answer": [
+   [
+    1,
+    1050000
+   ]
+  ]
+ },
+ {
+  "case": "Q1-C",
+  "question": "Q1",
+  "label": "set C",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.0010795409907586873,
+  "neo_s": 0.027144583989866078,
+  "answer": [
+   [
+    1,
+    300000
+   ]
+  ]
+ },
+ {
+  "case": "Q1-D",
+  "question": "Q1",
+  "label": "set D",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.0008779999916441739,
+  "neo_s": 0.03737858298700303,
+  "answer": [
+   [
+    1,
+    45000
+   ]
+  ]
+ },
+ {
+  "case": "Q1-E",
+  "question": "Q1",
+  "label": "set E",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.0007596250216010958,
+  "neo_s": 0.02470141599769704,
+  "answer": [
+   [
+    1,
+    40000
+   ]
+  ]
+ },
+ {
+  "case": "Q1-F",
+  "question": "Q1",
+  "label": "set F",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.0007906669925432652,
+  "neo_s": 0.025451207999140024,
+  "answer": [
+   [
+    1,
+    30000
+   ]
+  ]
+ },
+ {
+  "case": "Q2-month",
+  "question": "Q2",
+  "label": "full month",
+  "pg_rows": 30,
+  "neo_rows": 30,
+  "match": true,
+  "pg_s": 5.258069624978816,
+  "neo_s": 66.05441004200839,
+  "answer": [
+   [
+    "2026-09-01",
+    666667,
+    7683326000
+   ],
+   [
+    "2026-09-02",
+    666667,
+    7678846900
+   ],
+   [
+    "2026-09-03",
+    666666,
+    7665877900
+   ],
+   [
+    "2026-09-04",
+    666667,
+    7665199000
+   ],
+   [
+    "2026-09-05",
+    666667,
+    7679091900
+   ],
+   [
+    "2026-09-06",
+    666816,
+    7741994180
+   ],
+   [
+    "2026-09-07",
+    666817,
+    7726576180
+   ],
+   [
+    "2026-09-08",
+    666907,
+    7777047990
+   ],
+   [
+    "2026-09-09",
+    666906,
+    7783400210
+   ],
+   [
+    "2026-09-10",
+    666997,
+    7807170170
+   ],
+   [
+    "2026-09-11",
+    666847,
+    7746125100
+   ],
+   [
+    "2026-09-12",
+    666936,
+    7783593400
+   ],
+   [
+    "2026-09-13",
+    666937,
+    7800995510
+   ],
+   [
+    "2026-09-14",
+    666997,
+    7856644775
+   ],
+   [
+    "2026-09-15",
+    666996,
+    7859428355
+   ],
+   [
+    "2026-09-16",
+    666787,
+    7683087200
+   ],
+   [
+    "2026-09-17",
+    666757,
+    7699710100
+   ],
+   [
+    "2026-09-18",
+    666786,
+    7677843700
+   ],
+   [
+    "2026-09-19",
+    666757,
+    7665841400
+   ],
+   [
+    "2026-09-20",
+    666757,
+    7663404900
+   ],
+   [
+    "2026-09-21",
+    666726,
+    7696315800
+   ],
+   [
+    "2026-09-22",
+    666727,
+    7703220100
+   ],
+   [
+    "2026-09-23",
+    666697,
+    7697325900
+   ],
+   [
+    "2026-09-24",
+    666726,
+    7668636000
+   ],
+   [
+    "2026-09-25",
+    666697,
+    7677231000
+   ],
+   [
+    "2026-09-26",
+    666697,
+    7671715700
+   ],
+   [
+    "2026-09-27",
+    666696,
+    7692655900
+   ],
+   [
+    "2026-09-28",
+    666667,
+    7676184700
+   ],
+   [
+    "2026-09-29",
+    666667,
+    7668892500
+   ],
+   [
+    "2026-09-30",
+    666666,
+    7684945400
+   ]
+  ]
+ },
+ {
+  "case": "Q3-A",
+  "question": "Q3",
+  "label": "set A",
+  "pg_rows": 4,
+  "neo_rows": 4,
+  "match": true,
+  "pg_s": 0.05182545800926164,
+  "neo_s": 0.48733533298945986,
+  "answer": [
+   [
+    8917,
+    228001,
+    "handset",
+    0,
+    29
+   ],
+   [
+    16836,
+    228001,
+    "handset",
+    0,
+    29
+   ],
+   [
+    24755,
+    228001,
+    "handset",
+    0,
+    29
+   ],
+   [
+    220998,
+    998,
+    "handset",
+    0,
+    29
+   ]
+  ]
+ },
+ {
+  "case": "Q3-B",
+  "question": "Q3",
+  "label": "set B",
+  "pg_rows": 9,
+  "neo_rows": 9,
+  "match": true,
+  "pg_s": 0.002592583012301475,
+  "neo_s": 0.00914991699391976,
+  "answer": [
+   [
+    147226,
+    147226,
+    "handset",
+    0,
+    29
+   ],
+   [
+    147227,
+    147226,
+    "handset",
+    0,
+    29
+   ],
+   [
+    147229,
+    147226,
+    "handset",
+    0,
+    29
+   ],
+   [
+    147230,
+    147226,
+    "handset",
+    0,
+    29
+   ],
+   [
+    155147,
+    228018,
+    "handset",
+    0,
+    29
+   ],
+   [
+    163066,
+    228018,
+    "handset",
+    0,
+    29
+   ],
+   [
+    170985,
+    228018,
+    "handset",
+    0,
+    29
+   ],
+   [
+    178904,
+    228018,
+    "handset",
+    0,
+    29
+   ],
+   [
+    186823,
+    228018,
+    "handset",
+    0,
+    29
+   ]
+  ]
+ },
+ {
+  "case": "Q3-C",
+  "question": "Q3",
+  "label": "set C",
+  "pg_rows": 9,
+  "neo_rows": 9,
+  "match": true,
+  "pg_s": 0.00200749997748062,
+  "neo_s": 0.008333667006809264,
+  "answer": [
+   [
+    6573,
+    228043,
+    "handset",
+    0,
+    29
+   ],
+   [
+    206976,
+    206976,
+    "handset",
+    11,
+    29
+   ],
+   [
+    206977,
+    206976,
+    "handset",
+    0,
+    29
+   ],
+   [
+    206979,
+    206976,
+    "handset",
+    0,
+    29
+   ],
+   [
+    206980,
+    206976,
+    "handset",
+    0,
+    29
+   ],
+   [
+    214897,
+    228043,
+    "handset",
+    0,
+    29
+   ],
+   [
+    222816,
+    228043,
+    "handset",
+    0,
+    29
+   ],
+   [
+    230735,
+    228043,
+    "handset",
+    0,
+    29
+   ],
+   [
+    238654,
+    228043,
+    "handset",
+    0,
+    29
+   ]
+  ]
+ },
+ {
+  "case": "Q3-D",
+  "question": "Q3",
+  "label": "set D",
+  "pg_rows": 4,
+  "neo_rows": 4,
+  "match": true,
+  "pg_s": 0.003295292000984773,
+  "neo_s": 0.008800458017503843,
+  "answer": [
+   [
+    5917,
+    228301,
+    "handset",
+    0,
+    29
+   ],
+   [
+    13836,
+    228301,
+    "handset",
+    0,
+    29
+   ],
+   [
+    17998,
+    17998,
+    "handset",
+    0,
+    29
+   ],
+   [
+    21755,
+    228301,
+    "handset",
+    0,
+    29
+   ]
+  ]
+ },
+ {
+  "case": "Q3-E",
+  "question": "Q3",
+  "label": "set E",
+  "pg_rows": 9,
+  "neo_rows": 9,
+  "match": true,
+  "pg_s": 0.0016535829927306622,
+  "neo_s": 0.007376541994744912,
+  "answer": [
+   [
+    144226,
+    144226,
+    "handset",
+    0,
+    29
+   ],
+   [
+    144227,
+    144226,
+    "handset",
+    0,
+    29
+   ],
+   [
+    144229,
+    144226,
+    "handset",
+    0,
+    29
+   ],
+   [
+    144230,
+    144226,
+    "handset",
+    0,
+    29
+   ],
+   [
+    152147,
+    228318,
+    "handset",
+    0,
+    29
+   ],
+   [
+    160066,
+    228318,
+    "handset",
+    0,
+    29
+   ],
+   [
+    167985,
+    228318,
+    "handset",
+    0,
+    29
+   ],
+   [
+    175904,
+    228318,
+    "handset",
+    0,
+    29
+   ],
+   [
+    183823,
+    228318,
+    "handset",
+    0,
+    29
+   ]
+  ]
+ },
+ {
+  "case": "Q3-F",
+  "question": "Q3",
+  "label": "set F",
+  "pg_rows": 9,
+  "neo_rows": 9,
+  "match": true,
+  "pg_s": 0.0015263750101439655,
+  "neo_s": 0.00804725001216866,
+  "answer": [
+   [
+    3573,
+    228343,
+    "handset",
+    0,
+    29
+   ],
+   [
+    203976,
+    203976,
+    "handset",
+    11,
+    29
+   ],
+   [
+    203977,
+    203976,
+    "handset",
+    0,
+    29
+   ],
+   [
+    203979,
+    203976,
+    "handset",
+    0,
+    29
+   ],
+   [
+    203980,
+    203976,
+    "handset",
+    0,
+    29
+   ],
+   [
+    211897,
+    228343,
+    "handset",
+    0,
+    29
+   ],
+   [
+    219816,
+    228343,
+    "handset",
+    0,
+    29
+   ],
+   [
+    227735,
+    228343,
+    "handset",
+    0,
+    29
+   ],
+   [
+    235654,
+    228343,
+    "handset",
+    0,
+    29
+   ]
+  ]
+ },
+ {
+  "case": "Q4-A-d4",
+  "question": "Q4",
+  "label": "set A depth 4",
+  "pg_rows": 2,
+  "neo_rows": 2,
+  "match": true,
+  "pg_s": 0.012270040984731168,
+  "neo_s": 0.2344209170260001,
+  "answer": [
+   [
+    "Kigali",
+    3
+   ],
+   [
+    "Northern",
+    7
+   ]
+  ]
+ },
+ {
+  "case": "Q4-A-d6",
+  "question": "Q4",
+  "label": "set A depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.027226375008467585,
+  "neo_s": 0.14567208400694653,
+  "answer": [
+   [
+    "Eastern",
+    6
+   ],
+   [
+    "Kigali",
+    9
+   ],
+   [
+    "Northern",
+    13
+   ],
+   [
+    "Southern",
+    9
+   ],
+   [
+    "Western",
+    6
+   ]
+  ]
+ },
+ {
+  "case": "Q4-A-d8",
+  "question": "Q4",
+  "label": "set A depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.015049584006192163,
+  "neo_s": 0.24811008299002424,
+  "answer": [
+   [
+    "Eastern",
+    30
+   ],
+   [
+    "Kigali",
+    33
+   ],
+   [
+    "Northern",
+    37
+   ],
+   [
+    "Southern",
+    45
+   ],
+   [
+    "Western",
+    30
+   ]
+  ]
+ },
+ {
+  "case": "Q4-A-d10",
+  "question": "Q4",
+  "label": "set A depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.011956125003052875,
+  "neo_s": 0.12241666699992493,
+  "answer": [
+   [
+    "Eastern",
+    36
+   ],
+   [
+    "Kigali",
+    35
+   ],
+   [
+    "Northern",
+    37
+   ],
+   [
+    "Southern",
+    45
+   ],
+   [
+    "Western",
+    34
+   ]
+  ]
+ },
+ {
+  "case": "Q4-B-d4",
+  "question": "Q4",
+  "label": "set B depth 4",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.011753124999813735,
+  "neo_s": 0.02329616600763984,
+  "answer": [
+   [
+    "Eastern",
+    13
+   ],
+   [
+    "Kigali",
+    6
+   ],
+   [
+    "Northern",
+    7
+   ],
+   [
+    "Southern",
+    9
+   ],
+   [
+    "Western",
+    11
+   ]
+  ]
+ },
+ {
+  "case": "Q4-B-d6",
+  "question": "Q4",
+  "label": "set B depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.005767750000813976,
+  "neo_s": 0.007681374991079792,
+  "answer": [
+   [
+    "Eastern",
+    37
+   ],
+   [
+    "Kigali",
+    30
+   ],
+   [
+    "Northern",
+    35
+   ],
+   [
+    "Southern",
+    45
+   ],
+   [
+    "Western",
+    31
+   ]
+  ]
+ },
+ {
+  "case": "Q4-B-d8",
+  "question": "Q4",
+  "label": "set B depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.009867832995951176,
+  "neo_s": 0.011794749996624887,
+  "answer": [
+   [
+    "Eastern",
+    40
+   ],
+   [
+    "Kigali",
+    33
+   ],
+   [
+    "Northern",
+    35
+   ],
+   [
+    "Southern",
+    47
+   ],
+   [
+    "Western",
+    33
+   ]
+  ]
+ },
+ {
+  "case": "Q4-B-d10",
+  "question": "Q4",
+  "label": "set B depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.02861104201292619,
+  "neo_s": 0.027297249995172024,
+  "answer": [
+   [
+    "Eastern",
+    45
+   ],
+   [
+    "Kigali",
+    41
+   ],
+   [
+    "Northern",
+    46
+   ],
+   [
+    "Southern",
+    57
+   ],
+   [
+    "Western",
+    39
+   ]
+  ]
+ },
+ {
+  "case": "Q4-C-d4",
+  "question": "Q4",
+  "label": "set C depth 4",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.028005207976093516,
+  "neo_s": 0.06025937499362044,
+  "answer": [
+   [
+    "Eastern",
+    23
+   ],
+   [
+    "Kigali",
+    24
+   ],
+   [
+    "Northern",
+    29
+   ],
+   [
+    "Southern",
+    43
+   ],
+   [
+    "Western",
+    27
+   ]
+  ]
+ },
+ {
+  "case": "Q4-C-d6",
+  "question": "Q4",
+  "label": "set C depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.03409804101102054,
+  "neo_s": 0.015993041975889355,
+  "answer": [
+   [
+    "Eastern",
+    82
+   ],
+   [
+    "Kigali",
+    90
+   ],
+   [
+    "Northern",
+    97
+   ],
+   [
+    "Southern",
+    121
+   ],
+   [
+    "Western",
+    93
+   ]
+  ]
+ },
+ {
+  "case": "Q4-C-d8",
+  "question": "Q4",
+  "label": "set C depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.10094924998702481,
+  "neo_s": 0.084086084010778,
+  "answer": [
+   [
+    "Eastern",
+    151
+   ],
+   [
+    "Kigali",
+    172
+   ],
+   [
+    "Northern",
+    167
+   ],
+   [
+    "Southern",
+    186
+   ],
+   [
+    "Western",
+    156
+   ]
+  ]
+ },
+ {
+  "case": "Q4-C-d10",
+  "question": "Q4",
+  "label": "set C depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.0908019170165062,
+  "neo_s": 0.03949574998114258,
+  "answer": [
+   [
+    "Eastern",
+    278
+   ],
+   [
+    "Kigali",
+    293
+   ],
+   [
+    "Northern",
+    295
+   ],
+   [
+    "Southern",
+    294
+   ],
+   [
+    "Western",
+    273
+   ]
+  ]
+ },
+ {
+  "case": "Q4-D-d4",
+  "question": "Q4",
+  "label": "set D depth 4",
+  "pg_rows": 3,
+  "neo_rows": 3,
+  "match": true,
+  "pg_s": 0.002603125001769513,
+  "neo_s": 0.005316958006005734,
+  "answer": [
+   [
+    "Eastern",
+    2
+   ],
+   [
+    "Northern",
+    1
+   ],
+   [
+    "Western",
+    7
+   ]
+  ]
+ },
+ {
+  "case": "Q4-D-d6",
+  "question": "Q4",
+  "label": "set D depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.007373875007033348,
+  "neo_s": 0.019560250017093495,
+  "answer": [
+   [
+    "Eastern",
+    8
+   ],
+   [
+    "Kigali",
+    10
+   ],
+   [
+    "Northern",
+    7
+   ],
+   [
+    "Southern",
+    6
+   ],
+   [
+    "Western",
+    13
+   ]
+  ]
+ },
+ {
+  "case": "Q4-D-d8",
+  "question": "Q4",
+  "label": "set D depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.006353374978061765,
+  "neo_s": 0.00539920901064761,
+  "answer": [
+   [
+    "Eastern",
+    32
+   ],
+   [
+    "Kigali",
+    50
+   ],
+   [
+    "Northern",
+    31
+   ],
+   [
+    "Southern",
+    30
+   ],
+   [
+    "Western",
+    37
+   ]
+  ]
+ },
+ {
+  "case": "Q4-D-d10",
+  "question": "Q4",
+  "label": "set D depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.006966334010940045,
+  "neo_s": 0.007047124992823228,
+  "answer": [
+   [
+    "Eastern",
+    34
+   ],
+   [
+    "Kigali",
+    50
+   ],
+   [
+    "Northern",
+    37
+   ],
+   [
+    "Southern",
+    34
+   ],
+   [
+    "Western",
+    37
+   ]
+  ]
+ },
+ {
+  "case": "Q4-E-d4",
+  "question": "Q4",
+  "label": "set E depth 4",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.001834041002439335,
+  "neo_s": 0.005957042012596503,
+  "answer": [
+   [
+    "Eastern",
+    6
+   ],
+   [
+    "Kigali",
+    10
+   ],
+   [
+    "Northern",
+    13
+   ],
+   [
+    "Southern",
+    11
+   ],
+   [
+    "Western",
+    7
+   ]
+  ]
+ },
+ {
+  "case": "Q4-E-d6",
+  "question": "Q4",
+  "label": "set E depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.0023417079937644303,
+  "neo_s": 0.003599000017857179,
+  "answer": [
+   [
+    "Eastern",
+    30
+   ],
+   [
+    "Kigali",
+    50
+   ],
+   [
+    "Northern",
+    37
+   ],
+   [
+    "Southern",
+    31
+   ],
+   [
+    "Western",
+    35
+   ]
+  ]
+ },
+ {
+  "case": "Q4-E-d8",
+  "question": "Q4",
+  "label": "set E depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.00609712500590831,
+  "neo_s": 0.0053844999929424375,
+  "answer": [
+   [
+    "Eastern",
+    33
+   ],
+   [
+    "Kigali",
+    52
+   ],
+   [
+    "Northern",
+    40
+   ],
+   [
+    "Southern",
+    33
+   ],
+   [
+    "Western",
+    35
+   ]
+  ]
+ },
+ {
+  "case": "Q4-E-d10",
+  "question": "Q4",
+  "label": "set E depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.009394791995873675,
+  "neo_s": 0.0050989160081371665,
+  "answer": [
+   [
+    "Eastern",
+    40
+   ],
+   [
+    "Kigali",
+    62
+   ],
+   [
+    "Northern",
+    45
+   ],
+   [
+    "Southern",
+    39
+   ],
+   [
+    "Western",
+    44
+   ]
+  ]
+ },
+ {
+  "case": "Q4-F-d4",
+  "question": "Q4",
+  "label": "set F depth 4",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.001264291990082711,
+  "neo_s": 0.0029695419943891466,
+  "answer": [
+   [
+    "Eastern",
+    25
+   ],
+   [
+    "Kigali",
+    44
+   ],
+   [
+    "Northern",
+    29
+   ],
+   [
+    "Southern",
+    27
+   ],
+   [
+    "Western",
+    22
+   ]
+  ]
+ },
+ {
+  "case": "Q4-F-d6",
+  "question": "Q4",
+  "label": "set F depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.005298250005580485,
+  "neo_s": 0.003601208998588845,
+  "answer": [
+   [
+    "Eastern",
+    93
+   ],
+   [
+    "Kigali",
+    125
+   ],
+   [
+    "Northern",
+    92
+   ],
+   [
+    "Southern",
+    96
+   ],
+   [
+    "Western",
+    82
+   ]
+  ]
+ },
+ {
+  "case": "Q4-F-d8",
+  "question": "Q4",
+  "label": "set F depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.01946787498309277,
+  "neo_s": 0.023634000011952594,
+  "answer": [
+   [
+    "Eastern",
+    161
+   ],
+   [
+    "Kigali",
+    190
+   ],
+   [
+    "Northern",
+    164
+   ],
+   [
+    "Southern",
+    174
+   ],
+   [
+    "Western",
+    148
+   ]
+  ]
+ },
+ {
+  "case": "Q4-F-d10",
+  "question": "Q4",
+  "label": "set F depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.03684345798683353,
+  "neo_s": 0.012330500001553446,
+  "answer": [
+   [
+    "Eastern",
+    278
+   ],
+   [
+    "Kigali",
+    302
+   ],
+   [
+    "Northern",
+    295
+   ],
+   [
+    "Southern",
+    288
+   ],
+   [
+    "Western",
+    263
+   ]
+  ]
+ },
+ {
+  "case": "Q5-A",
+  "question": "Q5",
+  "label": "set A",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.004811332997633144,
+  "neo_s": 0.379197042027954,
+  "answer": [
+   [
+    20000001,
+    20000002,
+    20000003,
+    24755
+   ]
+  ]
+ },
+ {
+  "case": "Q5-B",
+  "question": "Q5",
+  "label": "set B",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.0019091250142082572,
+  "neo_s": 0.10607633399195038,
+  "answer": [
+   [
+    20000092,
+    20000093,
+    20000094,
+    170985
+   ]
+  ]
+ },
+ {
+  "case": "Q5-C",
+  "question": "Q5",
+  "label": "set C",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.003807041997788474,
+  "neo_s": 0.09858008299488574,
+  "answer": [
+   [
+    20000229,
+    20000230,
+    20000231,
+    230735
+   ]
+  ]
+ },
+ {
+  "case": "Q5-D",
+  "question": "Q5",
+  "label": "set D",
+  "pg_rows": 0,
+  "neo_rows": 0,
+  "match": true,
+  "pg_s": 0.0013999590009916574,
+  "neo_s": 0.09332137502497062,
+  "answer": []
+ },
+ {
+  "case": "Q5-E",
+  "question": "Q5",
+  "label": "set E",
+  "pg_rows": 0,
+  "neo_rows": 0,
+  "match": true,
+  "pg_s": 0.001341833994956687,
+  "neo_s": 0.06348716700449586,
+  "answer": []
+ },
+ {
+  "case": "Q5-F",
+  "question": "Q5",
+  "label": "set F",
+  "pg_rows": 0,
+  "neo_rows": 0,
+  "match": true,
+  "pg_s": 0.0014805420069023967,
+  "neo_s": 0.06681045799632557,
+  "answer": []
+ },
+ {
+  "case": "Q6-A",
+  "question": "Q6",
+  "label": "set A",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.003615958004957065,
+  "neo_s": 0.3073815410025418,
+  "answer": [
+   [
+    [
+     20000001,
+     20000002,
+     20000003,
+     20000004
+    ],
+    4
+   ]
+  ]
+ },
+ {
+  "case": "Q6-B",
+  "question": "Q6",
+  "label": "set B",
+  "pg_rows": 0,
+  "neo_rows": 0,
+  "match": true,
+  "pg_s": 0.002272749989060685,
+  "neo_s": 0.17653983298805542,
+  "answer": []
+ },
+ {
+  "case": "Q6-C",
+  "question": "Q6",
+  "label": "set C",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.002246040996396914,
+  "neo_s": 0.012811250024242327,
+  "answer": [
+   [
+    [
+     20000229,
+     20000230,
+     20000231,
+     20000232,
+     20000233,
+     20000234
+    ],
+    6
+   ]
+  ]
+ },
+ {
+  "case": "Q6-D",
+  "question": "Q6",
+  "label": "set D",
+  "pg_rows": 0,
+  "neo_rows": 0,
+  "match": true,
+  "pg_s": 0.0006975840078666806,
+  "neo_s": 0.0037797089898958802,
+  "answer": []
+ },
+ {
+  "case": "Q6-E",
+  "question": "Q6",
+  "label": "set E",
+  "pg_rows": 0,
+  "neo_rows": 0,
+  "match": true,
+  "pg_s": 0.0006160409830044955,
+  "neo_s": 0.0028638340008910745,
+  "answer": []
+ },
+ {
+  "case": "Q6-F",
+  "question": "Q6",
+  "label": "set F",
+  "pg_rows": 0,
+  "neo_rows": 0,
+  "match": true,
+  "pg_s": 0.00040379201527684927,
+  "neo_s": 0.0030149590165819973,
+  "answer": []
+ },
+ {
+  "case": "Q7-A-b4",
+  "question": "Q7",
+  "label": "set A bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.8189136250002775,
+  "neo_s": 0.29741687499335967,
+  "answer": [
+   [
+    3
+   ]
+  ]
+ },
+ {
+  "case": "Q7-A-b6",
+  "question": "Q7",
+  "label": "set A bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 57.52570170798572,
+  "neo_s": 0.3247087920026388,
+  "answer": [
+   [
+    3
+   ]
+  ]
+ },
+ {
+  "case": "Q7-B-b4",
+  "question": "Q7",
+  "label": "set B bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 1.0239231250016019,
+  "neo_s": 0.33877270901575685,
+  "answer": [
+   [
+    null
+   ]
+  ]
+ },
+ {
+  "case": "Q7-B-b6",
+  "question": "Q7",
+  "label": "set B bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 50.90944791599759,
+  "neo_s": 0.18066454099607654,
+  "answer": [
+   [
+    5
+   ]
+  ]
+ },
+ {
+  "case": "Q7-C-b4",
+  "question": "Q7",
+  "label": "set C bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.4989032919984311,
+  "neo_s": 0.19015025001135655,
+  "answer": [
+   [
+    null
+   ]
+  ]
+ },
+ {
+  "case": "Q7-C-b6",
+  "question": "Q7",
+  "label": "set C bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 46.448537874995964,
+  "neo_s": 0.2806569579988718,
+  "answer": [
+   [
+    5
+   ]
+  ]
+ },
+ {
+  "case": "Q7-D-b4",
+  "question": "Q7",
+  "label": "set D bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.6395625830045901,
+  "neo_s": 0.021234749990981072,
+  "answer": [
+   [
+    3
+   ]
+  ]
+ },
+ {
+  "case": "Q7-D-b6",
+  "question": "Q7",
+  "label": "set D bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 53.08473000000231,
+  "neo_s": 0.037449791008839384,
+  "answer": [
+   [
+    3
+   ]
+  ]
+ },
+ {
+  "case": "Q7-E-b4",
+  "question": "Q7",
+  "label": "set E bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.5352622080245055,
+  "neo_s": 0.2702825420128647,
+  "answer": [
+   [
+    null
+   ]
+  ]
+ },
+ {
+  "case": "Q7-E-b6",
+  "question": "Q7",
+  "label": "set E bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 54.74012491598842,
+  "neo_s": 0.3752029580064118,
+  "answer": [
+   [
+    5
+   ]
+  ]
+ },
+ {
+  "case": "Q7-F-b4",
+  "question": "Q7",
+  "label": "set F bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.6637109169969335,
+  "neo_s": 0.29923025000607595,
+  "answer": [
+   [
+    null
+   ]
+  ]
+ },
+ {
+  "case": "Q7-F-b6",
+  "question": "Q7",
+  "label": "set F bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 55.1004137910204,
+  "neo_s": 0.07514875000924803,
+  "answer": [
+   [
+    5
+   ]
+  ]
+ }
+]

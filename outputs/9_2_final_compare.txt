@@ -1,0 +1,51 @@
+=== 6.1 Correctness: 61 cases, Q7 SQL version: naive
+case          PG   Neo    PG s   Neo s  ok      |   case          PG   Neo    PG s   Neo s  ok   
+Q1-A           1     1    0.05    0.63  yes     |   Q4-E-d8        5     5    0.01    0.01  yes  
+Q1-B           1     1    0.00    0.03  yes     |   Q4-E-d10       5     5    0.01    0.01  yes  
+Q1-C           1     1    0.00    0.03  yes     |   Q4-F-d4        5     5    0.00    0.00  yes  
+Q1-D           1     1    0.00    0.04  yes     |   Q4-F-d6        5     5    0.01    0.00  yes  
+Q1-E           1     1    0.00    0.02  yes     |   Q4-F-d8        5     5    0.02    0.02  yes  
+Q1-F           1     1    0.00    0.03  yes     |   Q4-F-d10       5     5    0.04    0.01  yes  
+Q2-month      30    30    5.26   66.05  yes     |   Q5-A           1     1    0.00    0.38  yes  
+Q3-A           4     4    0.05    0.49  yes     |   Q5-B           1     1    0.00    0.11  yes  
+Q3-B           9     9    0.00    0.01  yes     |   Q5-C           1     1    0.00    0.10  yes  
+Q3-C           9     9    0.00    0.01  yes     |   Q5-D           0     0    0.00    0.09  yes  
+Q3-D           4     4    0.00    0.01  yes     |   Q5-E           0     0    0.00    0.06  yes  
+Q3-E           9     9    0.00    0.01  yes     |   Q5-F           0     0    0.00    0.07  yes  
+Q3-F           9     9    0.00    0.01  yes     |   Q6-A           1     1    0.00    0.31  yes  
+Q4-A-d4        2     2    0.01    0.23  yes     |   Q6-B           0     0    0.00    0.18  yes  
+Q4-A-d6        5     5    0.03    0.15  yes     |   Q6-C           1     1    0.00    0.01  yes  
+Q4-A-d8        5     5    0.02    0.25  yes     |   Q6-D           0     0    0.00    0.00  yes  
+Q4-A-d10       5     5    0.01    0.12  yes     |   Q6-E           0     0    0.00    0.00  yes  
+Q4-B-d4        5     5    0.01    0.02  yes     |   Q6-F           0     0    0.00    0.00  yes  
+Q4-B-d6        5     5    0.01    0.01  yes     |   Q7-A-b4        1     1    0.82    0.30  yes  
+Q4-B-d8        5     5    0.01    0.01  yes     |   Q7-A-b6        1     1   57.53    0.32  yes  
+Q4-B-d10       5     5    0.03    0.03  yes     |   Q7-B-b4        1     1    1.02    0.34  yes  
+Q4-C-d4        5     5    0.03    0.06  yes     |   Q7-B-b6        1     1   50.91    0.18  yes  
+Q4-C-d6        5     5    0.03    0.02  yes     |   Q7-C-b4        1     1    0.50    0.19  yes  
+Q4-C-d8        5     5    0.10    0.08  yes     |   Q7-C-b6        1     1   46.45    0.28  yes  
+Q4-C-d10       5     5    0.09    0.04  yes     |   Q7-D-b4        1     1    0.64    0.02  yes  
+Q4-D-d4        3     3    0.00    0.01  yes     |   Q7-D-b6        1     1   53.08    0.04  yes  
+Q4-D-d6        5     5    0.01    0.02  yes     |   Q7-E-b4        1     1    0.54    0.27  yes  
+Q4-D-d8        5     5    0.01    0.01  yes     |   Q7-E-b6        1     1   54.74    0.38  yes  
+Q4-D-d10       5     5    0.01    0.01  yes     |   Q7-F-b4        1     1    0.66    0.30  yes  
+Q4-E-d4        5     5    0.00    0.01  yes     |   Q7-F-b6        1     1   55.10    0.08  yes  
+Q4-E-d6        5     5    0.00    0.00  yes  
+
+Q1: 6/6  Q2: 1/1  Q3: 6/6  Q4: 24/24  Q5: 6/6  Q6: 6/6  Q7: 12/12
+TOTAL 61/61 cases identical (rows normalized to plain integers/dates and sorted)
+
+-- Q7 supporting paths (lengths compared above; paths validated separately)
+Q7-A-b4    length 3  accounts [998, 8917, 16836, 24755]  valid: yes
+Q7-A-b6    length 3  accounts [998, 8917, 16836, 24755]  valid: yes
+Q7-B-b6    length 5  accounts [147228, 155147, 163066, 170985, 178904, 186823]  valid: yes
+Q7-C-b6    length 5  accounts [206978, 214897, 222816, 230735, 238654, 6573]  valid: yes
+Q7-D-b4    length 3  accounts [237998, 5917, 13836, 21755]  valid: yes
+Q7-D-b6    length 3  accounts [237998, 5917, 13836, 21755]  valid: yes
+Q7-E-b6    length 5  accounts [144228, 152147, 160066, 167985, 175904, 183823]  valid: yes
+Q7-F-b6    length 5  accounts [203978, 211897, 219816, 227735, 235654, 3573]  valid: yes
+
+-- independent CSV checks (data/*.csv, plain Python)
+device overlap: account 206978 (0, 29) and 206976 (11, 29) on device 206976 -> overlap [11, 29]; Q3 row [(206976, 206976, 'handset', 11, 29)] agrees: yes
+Q5 chain [20000001, 20000002, 20000003]: linked True, increasing True, amounts 90-105% True, starts in hour True, timing True, shape True -> valid
+Q6 cycle [20000001, 20000002, 20000003, 20000004]: linked True, increasing True, amounts 90-105% True, starts in hour True, timing True, shape True -> valid

@@ -1,0 +1,39 @@
+SET
+Timing is on.
+--- primary keys
+ALTER TABLE
+Time: 215.815 ms
+ALTER TABLE
+Time: 172.583 ms
+ALTER TABLE
+Time: 208.582 ms
+ALTER TABLE
+Time: 113.185 ms
+ALTER TABLE
+Time: 28513.711 ms (00:28.514)
+--- foreign keys: ownership, device use, both transfer endpoints
+ALTER TABLE
+Time: 96.962 ms
+ALTER TABLE
+Time: 78.494 ms
+ALTER TABLE
+Time: 68.011 ms
+ALTER TABLE
+Time: 3443.124 ms (00:03.443)
+ALTER TABLE
+Time: 3418.740 ms (00:03.419)
+--- secondary indexes
+CREATE INDEX
+Time: 77.463 ms
+CREATE INDEX
+Time: 117.280 ms
+CREATE INDEX
+Time: 27833.184 ms (00:27.833)
+CREATE INDEX
+Time: 30243.386 ms (00:30.243)
+CREATE INDEX
+Time: 2569.922 ms (00:02.570)
+--- analyze
+ANALYZE
+Time: 1075.480 ms (00:01.075)
+Timing is off.

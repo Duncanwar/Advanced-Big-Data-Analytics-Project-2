@@ -1,0 +1,11 @@
+ProduceResults@neo4j                     rows          5  dbHits            0  region, accounts
+  Sort@neo4j                               rows          5  dbHits            0  region ASC
+    EagerAggregation@neo4j                   rows          5  dbHits          228  c.region AS region, count(b) AS accounts
+      Filter@neo4j                             rows        228  dbHits          228  c:Customer
+        Expand(All)@neo4j                        rows        228  dbHits        1,140  (b)<-[anon_1:OWNS]-(c)
+          Projection@neo4j                         rows        228  dbHits            0  b
+            Filter@neo4j                             rows        228  dbHits          453  NOT b = a AND b:Account
+              VarLengthExpand(Pruning,BFS,All)@neo4j   rows        453  dbHits        1,885  (a)-[:OWNS|USED_DEVICE*..10]-(b) 
+                NodeUniqueIndexSeek@neo4j                rows          1  dbHits            2  UNIQUE a:Account(account_id) WHERE account_id = $account
+
+total dbHits 3,936

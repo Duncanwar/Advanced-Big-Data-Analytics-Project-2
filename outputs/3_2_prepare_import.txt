@@ -1,0 +1,14 @@
+customers.csv        -> import/customers.csv         0.0s  header: customer_id:ID(Customer),region:string
+accounts.csv         -> import/accounts.csv          0.0s  header: account_id:ID(Account),:IGNORE,role:string
+devices.csv          -> import/devices.csv           0.0s  header: device_id:ID(Device),access_type:string
+account_devices.csv  -> import/used_device.csv       0.0s  header: :START_ID(Account),:END_ID(Device),first_day:int,last_day:int,observations:int
+transfers.csv        -> import/transfers.csv         1.9s  header: transfer_id:long,:START_ID(Account),:END_ID(Account),occurred_at:long,amount_rwf:int
+accounts.csv         -> import/owns.csv              0.4s  header: :START_ID(Customer),:END_ID(Account)  (248,000 rows)
+
+prepared 6 import files in 2.3s
+  accounts.csv            5.2 MB  first lines: account_id:ID(Account),:IGNORE,role:string | 1,1,person
+  customers.csv           3.6 MB  first lines: customer_id:ID(Customer),region:string | 1,Kigali
+  devices.csv             3.6 MB  first lines: device_id:ID(Device),access_type:string | 1,handset
+  owns.csv                3.5 MB  first lines: :START_ID(Customer),:END_ID(Account) | 1,1
+  transfers.csv         780.2 MB  first lines: transfer_id:long,:START_ID(Account),:END_ID(Account),occurred_at:long,amount_rwf:int | 1,188503,187907,1788235200,6700
+  used_device.csv         6.3 MB  first lines: :START_ID(Account),:END_ID(Device),first_day:int,last_day:int,observations:int | 1,1,0,29,11

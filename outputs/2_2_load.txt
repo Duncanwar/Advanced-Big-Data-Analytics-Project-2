@@ -1,0 +1,17 @@
+Timing is on.
+--- loading customers
+COPY 228000
+Time: 133.950 ms
+--- loading devices
+COPY 228600
+Time: 117.199 ms
+--- loading accounts
+COPY 248000
+Time: 163.640 ms
+--- loading account_devices
+COPY 285600
+Time: 194.894 ms
+--- loading transfers
+COPY 20003300
+Time: 18960.862 ms (00:18.961)
+Timing is off.

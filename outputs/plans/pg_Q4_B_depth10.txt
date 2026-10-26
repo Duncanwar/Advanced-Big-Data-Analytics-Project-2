@@ -1,0 +1,59 @@
+GroupAggregate  (cost=844.51..844.58 rows=4 width=16) (actual time=74.155..74.235 rows=5 loops=1)
+  Group Key: c.region
+  Buffers: shared hit=17161 read=495
+  CTE walk
+    ->  Recursive Union  (cost=0.00..788.82 rows=801 width=40) (actual time=0.303..31.019 rows=1187 loops=1)
+          Buffers: shared hit=12278 read=180
+          ->  Result  (cost=0.00..0.01 rows=1 width=40) (actual time=0.137..0.137 rows=1 loops=1)
+          ->  Nested Loop  (cost=0.42..78.08 rows=80 width=40) (actual time=0.094..2.727 rows=202 loops=11)
+                Buffers: shared hit=12278 read=180
+                ->  WorkTable Scan on walk w_1  (cost=0.00..0.22 rows=3 width=40) (actual time=0.001..0.010 rows=87 loops=11)
+                      Filter: (depth < '10'::smallint)
+                      Rows Removed by Filter: 21
+                ->  Append  (cost=0.42..25.84 rows=4 width=72) (actual time=0.013..0.031 rows=2 loops=958)
+                      Buffers: shared hit=12278 read=180
+                      ->  Index Only Scan using accounts_customer_account_idx on accounts  (cost=0.42..5.77 rows=1 width=72) (actual time=0.008..0.008 rows=0 loops=958)
+                            Index Cond: (customer_id = w_1.id)
+                            Filter: (w_1.kind = 'Customer'::text)
+                            Rows Removed by Filter: 1
+                            Heap Fetches: 0
+                            Buffers: shared hit=2825 read=50
+                      ->  Index Scan using accounts_pkey on accounts accounts_1  (cost=0.42..8.44 rows=1 width=72) (actual time=0.003..0.003 rows=0 loops=958)
+                            Index Cond: (account_id = w_1.id)
+                            Filter: (w_1.kind = 'Account'::text)
+                            Rows Removed by Filter: 1
+                            Buffers: shared hit=3818 read=14
+                      ->  Index Only Scan using account_devices_pkey on account_devices  (cost=0.42..5.78 rows=1 width=72) (actual time=0.010..0.010 rows=1 loops=958)
+                            Index Cond: (account_id = w_1.id)
+                            Filter: (w_1.kind = 'Account'::text)
+                            Rows Removed by Filter: 1
+                            Heap Fetches: 0
+                            Buffers: shared hit=2817 read=58
+                      ->  Index Only Scan using account_devices_device_account_idx on account_devices account_devices_1  (cost=0.42..5.84 rows=1 width=72) (actual time=0.009..0.009 rows=1 loops=958)
+                            Index Cond: (device_id = w_1.id)
+                            Filter: (w_1.kind = 'Device'::text)
+                            Rows Removed by Filter: 1
+                            Heap Fetches: 0
+                            Buffers: shared hit=2818 read=58
+  ->  Sort  (cost=55.69..55.70 rows=4 width=12) (actual time=74.128..74.156 rows=649 loops=1)
+        Sort Key: c.region, w.id
+        Sort Method: quicksort  Memory: 50kB
+        Buffers: shared hit=17161 read=495
+        ->  Nested Loop  (cost=0.84..55.65 rows=4 width=12) (actual time=2.835..72.657 rows=649 loops=1)
+              Buffers: shared hit=17155 read=495
+              ->  Nested Loop  (cost=0.42..53.78 rows=4 width=8) (actual time=2.385..52.737 rows=649 loops=1)
+                    Buffers: shared hit=14710 read=344
+                    ->  CTE Scan on walk w  (cost=0.00..20.03 rows=4 width=4) (actual time=2.378..31.424 rows=649 loops=1)
+                          Filter: ((id <> 147228) AND (kind = 'Account'::text))
+                          Rows Removed by Filter: 538
+                          Buffers: shared hit=12278 read=180
+                    ->  Index Scan using accounts_pkey on accounts a  (cost=0.42..8.44 rows=1 width=8) (actual time=0.033..0.033 rows=1 loops=649)
+                          Index Cond: (account_id = w.id)
+                          Buffers: shared hit=2432 read=164
+              ->  Index Scan using customers_pkey on customers c  (cost=0.42..0.47 rows=1 width=12) (actual time=0.030..0.030 rows=1 loops=649)
+                    Index Cond: (customer_id = a.customer_id)
+                    Buffers: shared hit=2445 read=151
+Planning:
+  Buffers: shared hit=134 read=20
+Planning Time: 3.889 ms
+Execution Time: 74.710 ms

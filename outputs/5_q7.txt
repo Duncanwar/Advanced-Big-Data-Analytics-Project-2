@@ -1,0 +1,33 @@
+
+=== Q7 Shortest transfer connection (persons only, directed, any time order)
+set  account destination bound  PG length  Neo length    PG s  Neo s  match
+A        998       24755     4          3           3    0.98   0.41    yes
+A        998       24755     6          3           3   57.33   0.04    yes
+B     147228      186823     4       none        none    0.59   0.50    yes
+B     147228      186823     6          5           5   51.57   0.17    yes
+C     206978        6573     4       none        none    0.51   0.30    yes
+C     206978        6573     6          5           5   47.89   0.29    yes
+D     237998       21755     4          3           3    0.62   0.06    yes
+D     237998       21755     6          3           3   55.43   0.03    yes
+E     144228      183823     4       none        none    0.59   0.40    yes
+E     144228      183823     6          5           5   52.96   0.27    yes
+F     203978        3573     4       none        none    0.62   0.22    yes
+F     203978        3573     6          5           5   53.59   0.06    yes
+
+-- one Neo4j path per successful case, checked against PostgreSQL rows
+A bound 4: accounts [998, 8917, 16836, 24755]
+   transfers [20000001, 20000002, 20000003]  length 3 = 3: events exist, direction in order, all persons: yes
+A bound 6: accounts [998, 8917, 16836, 24755]
+   transfers [20000001, 20000002, 20000003]  length 3 = 3: events exist, direction in order, all persons: yes
+B bound 6: accounts [147228, 155147, 163066, 170985, 178904, 186823]
+   transfers [20000092, 20000093, 20000094, 20000095, 20000096]  length 5 = 5: events exist, direction in order, all persons: yes
+C bound 6: accounts [206978, 214897, 222816, 230735, 238654, 6573]
+   transfers [20000229, 20000230, 20000231, 20000232, 20000233]  length 5 = 5: events exist, direction in order, all persons: yes
+D bound 4: accounts [237998, 5917, 13836, 21755]
+   transfers [20001651, 20001652, 20001653]  length 3 = 3: events exist, direction in order, all persons: yes
+D bound 6: accounts [237998, 5917, 13836, 21755]
+   transfers [20001651, 20001652, 20001653]  length 3 = 3: events exist, direction in order, all persons: yes
+E bound 6: accounts [144228, 152147, 160066, 167985, 175904, 183823]
+   transfers [20001742, 20001743, 20001744, 20001745, 20001746]  length 5 = 5: events exist, direction in order, all persons: yes
+F bound 6: accounts [203978, 211897, 219816, 227735, 235654, 3573]
+   transfers [20001879, 20001880, 20001881, 20001882, 20001883]  length 5 = 5: events exist, direction in order, all persons: yes

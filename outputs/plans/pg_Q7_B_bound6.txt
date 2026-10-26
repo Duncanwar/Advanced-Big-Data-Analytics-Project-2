@@ -1,0 +1,34 @@
+Aggregate  (cost=1768.56..1768.57 rows=1 width=4) (actual time=55201.365..55201.378 rows=1 loops=1)
+  Buffers: shared hit=59808239 read=250018, temp read=887 written=1827
+  CTE walk
+    ->  Recursive Union  (cost=0.42..1699.87 rows=3051 width=8) (actual time=0.005..55082.362 rows=427955 loops=1)
+          Buffers: shared hit=59808239 read=250018, temp read=887 written=887
+          ->  Index Scan using accounts_pkey on accounts  (cost=0.42..8.44 rows=1 width=8) (actual time=0.004..0.009 rows=1 loops=1)
+                Index Cond: (account_id = 147228)
+                Filter: (role = 'person'::text)
+                Buffers: shared hit=4
+          ->  Nested Loop  (cost=0.98..166.09 rows=305 width=8) (actual time=2.789..7558.445 rows=1454806 loops=7)
+                Buffers: shared hit=59808235 read=250018, temp read=887 written=2
+                ->  Nested Loop  (cost=0.56..26.60 rows=315 width=8) (actual time=2.730..4744.383 rows=2081255 loops=7)
+                      Buffers: shared hit=1534948 read=248169, temp read=887 written=2
+                      ->  WorkTable Scan on walk w  (cost=0.00..0.25 rows=3 width=8) (actual time=2.471..9.617 rows=26851 loops=7)
+                            Filter: ((depth < '6'::smallint) AND (account <> 186823))
+                            Rows Removed by Filter: 34286
+                            Buffers: temp read=887 written=2
+                      ->  Index Only Scan using transfers_sender_time_idx on transfers t  (cost=0.56..7.73 rows=105 width=8) (actual time=0.131..0.169 rows=78 loops=187956)
+                            Index Cond: (sender_id = w.account)
+                            Heap Fetches: 0
+                            Buffers: shared hit=1534948 read=248169
+                ->  Index Scan using accounts_pkey on accounts r  (cost=0.42..0.44 rows=1 width=4) (actual time=0.001..0.001 rows=1 loops=14568784)
+                      Index Cond: (account_id = t.receiver_id)
+                      Filter: (role = 'person'::text)
+                      Rows Removed by Filter: 0
+                      Buffers: shared hit=58273287 read=1849
+  ->  CTE Scan on walk  (cost=0.00..68.65 rows=15 width=4) (actual time=1757.822..55201.357 rows=2 loops=1)
+        Filter: (account = 186823)
+        Rows Removed by Filter: 427953
+        Buffers: shared hit=59808239 read=250018, temp read=887 written=1827
+Planning:
+  Buffers: shared hit=14 read=12
+Planning Time: 2.237 ms
+Execution Time: 55207.112 ms

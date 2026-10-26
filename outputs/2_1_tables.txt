@@ -1,0 +1,11 @@
+psql:sql/01_tables.sql:6: NOTICE:  table "transfers" does not exist, skipping
+psql:sql/01_tables.sql:6: NOTICE:  table "account_devices" does not exist, skipping
+psql:sql/01_tables.sql:6: NOTICE:  table "accounts" does not exist, skipping
+psql:sql/01_tables.sql:6: NOTICE:  table "devices" does not exist, skipping
+psql:sql/01_tables.sql:6: NOTICE:  table "customers" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE

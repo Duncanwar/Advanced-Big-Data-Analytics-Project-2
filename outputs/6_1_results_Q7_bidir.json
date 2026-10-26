@@ -1,0 +1,182 @@
+[
+ {
+  "case": "Q7-A-b4",
+  "question": "Q7",
+  "label": "set A bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.07670954099739902,
+  "neo_s": 0.06511733299703337,
+  "answer": [
+   [
+    3
+   ]
+  ]
+ },
+ {
+  "case": "Q7-A-b6",
+  "question": "Q7",
+  "label": "set A bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.13462858300772496,
+  "neo_s": 0.004659665981307626,
+  "answer": [
+   [
+    3
+   ]
+  ]
+ },
+ {
+  "case": "Q7-B-b4",
+  "question": "Q7",
+  "label": "set B bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.004735833004815504,
+  "neo_s": 0.02971358402282931,
+  "answer": [
+   [
+    null
+   ]
+  ]
+ },
+ {
+  "case": "Q7-B-b6",
+  "question": "Q7",
+  "label": "set B bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.04372966699884273,
+  "neo_s": 0.01564595798845403,
+  "answer": [
+   [
+    5
+   ]
+  ]
+ },
+ {
+  "case": "Q7-C-b4",
+  "question": "Q7",
+  "label": "set C bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.010209624975686893,
+  "neo_s": 0.06638820801163092,
+  "answer": [
+   [
+    null
+   ]
+  ]
+ },
+ {
+  "case": "Q7-C-b6",
+  "question": "Q7",
+  "label": "set C bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.1050394170160871,
+  "neo_s": 0.0667042080021929,
+  "answer": [
+   [
+    5
+   ]
+  ]
+ },
+ {
+  "case": "Q7-D-b4",
+  "question": "Q7",
+  "label": "set D bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.011056083982111886,
+  "neo_s": 0.01804900000570342,
+  "answer": [
+   [
+    3
+   ]
+  ]
+ },
+ {
+  "case": "Q7-D-b6",
+  "question": "Q7",
+  "label": "set D bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.10539545799838379,
+  "neo_s": 0.0043908749939873815,
+  "answer": [
+   [
+    3
+   ]
+  ]
+ },
+ {
+  "case": "Q7-E-b4",
+  "question": "Q7",
+  "label": "set E bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.009465124981943518,
+  "neo_s": 0.0678378329903353,
+  "answer": [
+   [
+    null
+   ]
+  ]
+ },
+ {
+  "case": "Q7-E-b6",
+  "question": "Q7",
+  "label": "set E bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.11023849999764934,
+  "neo_s": 0.030511457996908575,
+  "answer": [
+   [
+    5
+   ]
+  ]
+ },
+ {
+  "case": "Q7-F-b4",
+  "question": "Q7",
+  "label": "set F bound 4",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.011985791003098711,
+  "neo_s": 0.0368254579952918,
+  "answer": [
+   [
+    null
+   ]
+  ]
+ },
+ {
+  "case": "Q7-F-b6",
+  "question": "Q7",
+  "label": "set F bound 6",
+  "pg_rows": 1,
+  "neo_rows": 1,
+  "match": true,
+  "pg_s": 0.11672745901159942,
+  "neo_s": 0.013521082990337163,
+  "answer": [
+   [
+    5
+   ]
+  ]
+ }
+]

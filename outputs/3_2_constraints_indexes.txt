@@ -1,0 +1,11 @@
+name, type, entityType, labelsOrTypes, properties
+"account_id_unique", "UNIQUENESS", "NODE", ["Account"], ["account_id"]
+"customer_id_unique", "UNIQUENESS", "NODE", ["Customer"], ["customer_id"]
+"device_id_unique", "UNIQUENESS", "NODE", ["Device"], ["device_id"]
+name, type, entityType, labelsOrTypes, properties, state, populationPercent
+"account_id_unique", "RANGE", "NODE", ["Account"], ["account_id"], "ONLINE", 100.0
+"customer_id_unique", "RANGE", "NODE", ["Customer"], ["customer_id"], "ONLINE", 100.0
+"device_id_unique", "RANGE", "NODE", ["Device"], ["device_id"], "ONLINE", 100.0
+"index_343aff4e", "LOOKUP", "NODE", NULL, NULL, "ONLINE", 100.0
+"index_f7700477", "LOOKUP", "RELATIONSHIP", NULL, NULL, "ONLINE", 100.0
+"transfer_occurred_at", "RANGE", "RELATIONSHIP", ["TRANSFER"], ["occurred_at"], "ONLINE", 100.0

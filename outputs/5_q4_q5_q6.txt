@@ -1,0 +1,61 @@
+=== Q4 Ownership and device network (distinct other accounts by owner region)
+set  depth   East   Kiga   Nort   Sout   West   total   PG s  Neo s  match
+A        4      0      3      7      0      0      10   0.06   0.20    yes
+A        6      6      9     13      9      6      43   0.02   0.05    yes
+A        8     30     33     37     45     30     175   0.03   0.03    yes
+A       10     36     35     37     45     34     187   0.02   0.03    yes
+B        4     13      6      7      9     11      46   0.02   0.01    yes
+B        6     37     30     35     45     31     178   0.01   0.00    yes
+B        8     40     33     35     47     33     188   0.01   0.01    yes
+B       10     45     41     46     57     39     228   0.02   0.01    yes
+C        4     23     24     29     43     27     146   0.02   0.06    yes
+C        6     82     90     97    121     93     483   0.04   0.02    yes
+C        8    151    172    167    186    156     832   0.05   0.09    yes
+C       10    278    293    295    294    273    1433   0.09   0.04    yes
+D        4      2      0      1      0      7      10   0.00   0.00    yes
+D        6      8     10      7      6     13      44   0.01   0.02    yes
+D        8     32     50     31     30     37     180   0.01   0.00    yes
+D       10     34     50     37     34     37     192   0.00   0.00    yes
+E        4      6     10     13     11      7      47   0.00   0.00    yes
+E        6     30     50     37     31     35     183   0.00   0.00    yes
+E        8     33     52     40     33     35     193   0.00   0.00    yes
+E       10     40     62     45     39     44     230   0.01   0.00    yes
+F        4     25     44     29     27     22     147   0.00   0.00    yes
+F        6     93    125     92     96     82     488   0.00   0.00    yes
+F        8    161    190    164    174    148     837   0.01   0.01    yes
+F       10    278    302    295    288    263    1426   0.02   0.01    yes
+chart saved: outputs/q4_count_vs_depth.png
+
+supporting path: set B account 147228 to account 2984, reached at minimum depth 10 (10 links)
+   Account 147228  --  Device 228018  --  Account 178904  --  Device 222753  --  Account 80904  --  Device 80901  --  Account 80903  --  Device 228050  --  Account 72984  --  Device 224793  --  Account 2984
+
+=== Q5 Rapid onward payments (three transfers, four accounts, <= 600 s gaps, 90-105% amounts)
+set  account  PG chains  Neo chains  match   chains (t1, t2, t3, final receiver)
+A        998          1           1    yes   [(20000001, 20000002, 20000003, 24755)]
+B     147228          1           1    yes   [(20000092, 20000093, 20000094, 170985)]
+C     206978          1           1    yes   [(20000229, 20000230, 20000231, 230735)]
+D     237998          0           0    yes   []
+E     144228          0           0    yes   []
+F     203978          0           0    yes   []
+
+example chain (20000001, 20000002, 20000003) ending at account 24755:
+    transfer   sender  receiver  time (CAT)            amount RWF  % of prev
+    20000001      998      8917  2026-09-06 10:00:00      200,000           
+    20000002     8917     16836  2026-09-06 10:00:40      196,000     98.00%
+    20000003    16836     24755  2026-09-06 10:01:20      192,080     98.00%
+
+=== Q6 Circular payments (3 to 8 transfers back to the review account within its hour)
+set  account  PG cycles  Neo cycles  match   cycles (transfer ids, length)
+A        998          1           1    yes   [((20000001, 20000002, 20000003, 20000004), 4)]
+B     147228          0           0    yes   []
+C     206978          1           1    yes   [((20000229, 20000230, 20000231, 20000232, 20000233, 20000234), 6)]
+D     237998          0           0    yes   []
+E     144228          0           0    yes   []
+F     203978          0           0    yes   []
+
+example cycle (20000001, 20000002, 20000003, 20000004) (length 4):
+    transfer   sender  receiver  time (CAT)            amount RWF  % of prev
+    20000001      998      8917  2026-09-06 10:00:00      200,000           
+    20000002     8917     16836  2026-09-06 10:00:40      196,000     98.00%
+    20000003    16836     24755  2026-09-06 10:01:20      192,080     98.00%
+    20000004    24755       998  2026-09-06 10:02:00      188,238     98.00%

@@ -1,0 +1,22 @@
+=== 6.2 timing: engine pg, 4 cases, 3 warm-ups + 5 measured runs each
+pg  Q7-B-b4     run 1  2026-10-26 12:44:42        4.0 ms  rows 1  correct True
+pg  Q7-B-b4     run 2  2026-10-26 12:44:42        4.4 ms  rows 1  correct True
+pg  Q7-B-b4     run 3  2026-10-26 12:44:42        3.8 ms  rows 1  correct True
+pg  Q7-B-b4     run 4  2026-10-26 12:44:42        3.6 ms  rows 1  correct True
+pg  Q7-B-b4     run 5  2026-10-26 12:44:42        3.5 ms  rows 1  correct True
+pg  Q7-B-b6     run 1  2026-10-26 12:44:42       40.1 ms  rows 1  correct True
+pg  Q7-B-b6     run 2  2026-10-26 12:44:42       38.8 ms  rows 1  correct True
+pg  Q7-B-b6     run 3  2026-10-26 12:44:42       38.2 ms  rows 1  correct True
+pg  Q7-B-b6     run 4  2026-10-26 12:44:42       38.0 ms  rows 1  correct True
+pg  Q7-B-b6     run 5  2026-10-26 12:44:42       38.0 ms  rows 1  correct True
+pg  Q7-E-b4     run 1  2026-10-26 12:44:42        3.4 ms  rows 1  correct True
+pg  Q7-E-b4     run 2  2026-10-26 12:44:42        3.5 ms  rows 1  correct True
+pg  Q7-E-b4     run 3  2026-10-26 12:44:42        3.6 ms  rows 1  correct True
+pg  Q7-E-b4     run 4  2026-10-26 12:44:42        3.5 ms  rows 1  correct True
+pg  Q7-E-b4     run 5  2026-10-26 12:44:42        3.4 ms  rows 1  correct True
+pg  Q7-E-b6     run 1  2026-10-26 12:44:43       39.0 ms  rows 1  correct True
+pg  Q7-E-b6     run 2  2026-10-26 12:44:43       38.9 ms  rows 1  correct True
+pg  Q7-E-b6     run 3  2026-10-26 12:44:43       39.6 ms  rows 1  correct True
+pg  Q7-E-b6     run 4  2026-10-26 12:44:43       39.0 ms  rows 1  correct True
+pg  Q7-E-b6     run 5  2026-10-26 12:44:43       38.7 ms  rows 1  correct True
+saved outputs/6_2_runs_pg_improved.csv

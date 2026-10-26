@@ -1,0 +1,750 @@
+[
+ {
+  "case": "Q4-A-d4",
+  "question": "Q4",
+  "label": "set A depth 4",
+  "pg_rows": 2,
+  "neo_rows": 2,
+  "match": true,
+  "pg_s": 0.07938895799452439,
+  "neo_s": 0.06598949999897741,
+  "answer": [
+   [
+    "Kigali",
+    3
+   ],
+   [
+    "Northern",
+    7
+   ]
+  ]
+ },
+ {
+  "case": "Q4-A-d6",
+  "question": "Q4",
+  "label": "set A depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.009061249991646037,
+  "neo_s": 0.015323708998039365,
+  "answer": [
+   [
+    "Eastern",
+    6
+   ],
+   [
+    "Kigali",
+    9
+   ],
+   [
+    "Northern",
+    13
+   ],
+   [
+    "Southern",
+    9
+   ],
+   [
+    "Western",
+    6
+   ]
+  ]
+ },
+ {
+  "case": "Q4-A-d8",
+  "question": "Q4",
+  "label": "set A depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.013203667011111975,
+  "neo_s": 0.007275957992533222,
+  "answer": [
+   [
+    "Eastern",
+    30
+   ],
+   [
+    "Kigali",
+    33
+   ],
+   [
+    "Northern",
+    37
+   ],
+   [
+    "Southern",
+    45
+   ],
+   [
+    "Western",
+    30
+   ]
+  ]
+ },
+ {
+  "case": "Q4-A-d10",
+  "question": "Q4",
+  "label": "set A depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.00643212502473034,
+  "neo_s": 0.007824832980986685,
+  "answer": [
+   [
+    "Eastern",
+    36
+   ],
+   [
+    "Kigali",
+    35
+   ],
+   [
+    "Northern",
+    37
+   ],
+   [
+    "Southern",
+    45
+   ],
+   [
+    "Western",
+    34
+   ]
+  ]
+ },
+ {
+  "case": "Q4-B-d4",
+  "question": "Q4",
+  "label": "set B depth 4",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.006942999985767528,
+  "neo_s": 0.008104292006464675,
+  "answer": [
+   [
+    "Eastern",
+    13
+   ],
+   [
+    "Kigali",
+    6
+   ],
+   [
+    "Northern",
+    7
+   ],
+   [
+    "Southern",
+    9
+   ],
+   [
+    "Western",
+    11
+   ]
+  ]
+ },
+ {
+  "case": "Q4-B-d6",
+  "question": "Q4",
+  "label": "set B depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.004132957983529195,
+  "neo_s": 0.005507334019057453,
+  "answer": [
+   [
+    "Eastern",
+    37
+   ],
+   [
+    "Kigali",
+    30
+   ],
+   [
+    "Northern",
+    35
+   ],
+   [
+    "Southern",
+    45
+   ],
+   [
+    "Western",
+    31
+   ]
+  ]
+ },
+ {
+  "case": "Q4-B-d8",
+  "question": "Q4",
+  "label": "set B depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.008101040992187336,
+  "neo_s": 0.048914667015196756,
+  "answer": [
+   [
+    "Eastern",
+    40
+   ],
+   [
+    "Kigali",
+    33
+   ],
+   [
+    "Northern",
+    35
+   ],
+   [
+    "Southern",
+    47
+   ],
+   [
+    "Western",
+    33
+   ]
+  ]
+ },
+ {
+  "case": "Q4-B-d10",
+  "question": "Q4",
+  "label": "set B depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.02888904101564549,
+  "neo_s": 0.01591404198552482,
+  "answer": [
+   [
+    "Eastern",
+    45
+   ],
+   [
+    "Kigali",
+    41
+   ],
+   [
+    "Northern",
+    46
+   ],
+   [
+    "Southern",
+    57
+   ],
+   [
+    "Western",
+    39
+   ]
+  ]
+ },
+ {
+  "case": "Q4-C-d4",
+  "question": "Q4",
+  "label": "set C depth 4",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.015812666999408975,
+  "neo_s": 0.02251587502541952,
+  "answer": [
+   [
+    "Eastern",
+    23
+   ],
+   [
+    "Kigali",
+    24
+   ],
+   [
+    "Northern",
+    29
+   ],
+   [
+    "Southern",
+    43
+   ],
+   [
+    "Western",
+    27
+   ]
+  ]
+ },
+ {
+  "case": "Q4-C-d6",
+  "question": "Q4",
+  "label": "set C depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.02892991600674577,
+  "neo_s": 0.009309207991464064,
+  "answer": [
+   [
+    "Eastern",
+    82
+   ],
+   [
+    "Kigali",
+    90
+   ],
+   [
+    "Northern",
+    97
+   ],
+   [
+    "Southern",
+    121
+   ],
+   [
+    "Western",
+    93
+   ]
+  ]
+ },
+ {
+  "case": "Q4-C-d8",
+  "question": "Q4",
+  "label": "set C depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.04281262500444427,
+  "neo_s": 0.041575957991881296,
+  "answer": [
+   [
+    "Eastern",
+    151
+   ],
+   [
+    "Kigali",
+    172
+   ],
+   [
+    "Northern",
+    167
+   ],
+   [
+    "Southern",
+    186
+   ],
+   [
+    "Western",
+    156
+   ]
+  ]
+ },
+ {
+  "case": "Q4-C-d10",
+  "question": "Q4",
+  "label": "set C depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.07016054098494351,
+  "neo_s": 0.023540750000393018,
+  "answer": [
+   [
+    "Eastern",
+    278
+   ],
+   [
+    "Kigali",
+    293
+   ],
+   [
+    "Northern",
+    295
+   ],
+   [
+    "Southern",
+    294
+   ],
+   [
+    "Western",
+    273
+   ]
+  ]
+ },
+ {
+  "case": "Q4-D-d4",
+  "question": "Q4",
+  "label": "set D depth 4",
+  "pg_rows": 3,
+  "neo_rows": 3,
+  "match": true,
+  "pg_s": 0.0015980000025592744,
+  "neo_s": 0.003490084025543183,
+  "answer": [
+   [
+    "Eastern",
+    2
+   ],
+   [
+    "Northern",
+    1
+   ],
+   [
+    "Western",
+    7
+   ]
+  ]
+ },
+ {
+  "case": "Q4-D-d6",
+  "question": "Q4",
+  "label": "set D depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.00410399999236688,
+  "neo_s": 0.008142375008901581,
+  "answer": [
+   [
+    "Eastern",
+    8
+   ],
+   [
+    "Kigali",
+    10
+   ],
+   [
+    "Northern",
+    7
+   ],
+   [
+    "Southern",
+    6
+   ],
+   [
+    "Western",
+    13
+   ]
+  ]
+ },
+ {
+  "case": "Q4-D-d8",
+  "question": "Q4",
+  "label": "set D depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.004969416011590511,
+  "neo_s": 0.0042432080081198364,
+  "answer": [
+   [
+    "Eastern",
+    32
+   ],
+   [
+    "Kigali",
+    50
+   ],
+   [
+    "Northern",
+    31
+   ],
+   [
+    "Southern",
+    30
+   ],
+   [
+    "Western",
+    37
+   ]
+  ]
+ },
+ {
+  "case": "Q4-D-d10",
+  "question": "Q4",
+  "label": "set D depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.004016958991996944,
+  "neo_s": 0.004373833013232797,
+  "answer": [
+   [
+    "Eastern",
+    34
+   ],
+   [
+    "Kigali",
+    50
+   ],
+   [
+    "Northern",
+    37
+   ],
+   [
+    "Southern",
+    34
+   ],
+   [
+    "Western",
+    37
+   ]
+  ]
+ },
+ {
+  "case": "Q4-E-d4",
+  "question": "Q4",
+  "label": "set E depth 4",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.0021348330192267895,
+  "neo_s": 0.003634166991105303,
+  "answer": [
+   [
+    "Eastern",
+    6
+   ],
+   [
+    "Kigali",
+    10
+   ],
+   [
+    "Northern",
+    13
+   ],
+   [
+    "Southern",
+    11
+   ],
+   [
+    "Western",
+    7
+   ]
+  ]
+ },
+ {
+  "case": "Q4-E-d6",
+  "question": "Q4",
+  "label": "set E depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.0021381670085247606,
+  "neo_s": 0.0032430000137537718,
+  "answer": [
+   [
+    "Eastern",
+    30
+   ],
+   [
+    "Kigali",
+    50
+   ],
+   [
+    "Northern",
+    37
+   ],
+   [
+    "Southern",
+    31
+   ],
+   [
+    "Western",
+    35
+   ]
+  ]
+ },
+ {
+  "case": "Q4-E-d8",
+  "question": "Q4",
+  "label": "set E depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.0051629999943543226,
+  "neo_s": 0.003022125019924715,
+  "answer": [
+   [
+    "Eastern",
+    33
+   ],
+   [
+    "Kigali",
+    52
+   ],
+   [
+    "Northern",
+    40
+   ],
+   [
+    "Southern",
+    33
+   ],
+   [
+    "Western",
+    35
+   ]
+  ]
+ },
+ {
+  "case": "Q4-E-d10",
+  "question": "Q4",
+  "label": "set E depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.006170125008793548,
+  "neo_s": 0.003094374987995252,
+  "answer": [
+   [
+    "Eastern",
+    40
+   ],
+   [
+    "Kigali",
+    62
+   ],
+   [
+    "Northern",
+    45
+   ],
+   [
+    "Southern",
+    39
+   ],
+   [
+    "Western",
+    44
+   ]
+  ]
+ },
+ {
+  "case": "Q4-F-d4",
+  "question": "Q4",
+  "label": "set F depth 4",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.0008201250166166574,
+  "neo_s": 0.0014312079874798656,
+  "answer": [
+   [
+    "Eastern",
+    25
+   ],
+   [
+    "Kigali",
+    44
+   ],
+   [
+    "Northern",
+    29
+   ],
+   [
+    "Southern",
+    27
+   ],
+   [
+    "Western",
+    22
+   ]
+  ]
+ },
+ {
+  "case": "Q4-F-d6",
+  "question": "Q4",
+  "label": "set F depth 6",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.0033320410002488643,
+  "neo_s": 0.0017405000107828528,
+  "answer": [
+   [
+    "Eastern",
+    93
+   ],
+   [
+    "Kigali",
+    125
+   ],
+   [
+    "Northern",
+    92
+   ],
+   [
+    "Southern",
+    96
+   ],
+   [
+    "Western",
+    82
+   ]
+  ]
+ },
+ {
+  "case": "Q4-F-d8",
+  "question": "Q4",
+  "label": "set F depth 8",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.01090416600345634,
+  "neo_s": 0.005784249980933964,
+  "answer": [
+   [
+    "Eastern",
+    161
+   ],
+   [
+    "Kigali",
+    190
+   ],
+   [
+    "Northern",
+    164
+   ],
+   [
+    "Southern",
+    174
+   ],
+   [
+    "Western",
+    148
+   ]
+  ]
+ },
+ {
+  "case": "Q4-F-d10",
+  "question": "Q4",
+  "label": "set F depth 10",
+  "pg_rows": 5,
+  "neo_rows": 5,
+  "match": true,
+  "pg_s": 0.023594208003487438,
+  "neo_s": 0.007004708983004093,
+  "answer": [
+   [
+    "Eastern",
+    278
+   ],
+   [
+    "Kigali",
+    302
+   ],
+   [
+    "Northern",
+    295
+   ],
+   [
+    "Southern",
+    288
+   ],
+   [
+    "Western",
+    263
+   ]
+  ]
+ }
+]

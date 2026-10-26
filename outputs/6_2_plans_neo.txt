@@ -1,0 +1,30 @@
+--- Neo4j Q2_month: total dbHits 100,016,501, result available after 67 ms, consumed after 68813 ms
+ProduceResults@neo4j                     rows         30  dbHits            0  day, transfers, total_rwf
+  Sort@neo4j                               rows         30  dbHits            0  day ASC
+    EagerAggregation@neo4j                   rows         30  dbHits            0  day, count(*) AS transfers, sum(amount) AS total_rwf
+      Projection@neo4j                         rows 20,003,300  dbHits   40,006,600  date(datetime({epochSeconds: cache[t.occurred_at], timezone: $autostring_0})) AS day, cach
+        CacheProperties@neo4j                    rows 20,003,300  dbHits   40,006,600  cache[t.occurred_at], cache[t.amount_rwf]
+          DirectedRelationshipTypeScan@neo4j       rows 20,003,300  dbHits   20,003,301  (anon_0)-[t:TRANSFER]->(anon_1)
+--- Neo4j Q4_B_depth10: total dbHits 3,936, result available after 45 ms, consumed after 18 ms
+ProduceResults@neo4j                     rows          5  dbHits            0  region, accounts
+  Sort@neo4j                               rows          5  dbHits            0  region ASC
+    EagerAggregation@neo4j                   rows          5  dbHits          228  c.region AS region, count(b) AS accounts
+      Filter@neo4j                             rows        228  dbHits          228  c:Customer
+        Expand(All)@neo4j                        rows        228  dbHits        1,140  (b)<-[anon_1:OWNS]-(c)
+          Projection@neo4j                         rows        228  dbHits            0  b
+            Filter@neo4j                             rows        228  dbHits          453  NOT b = a AND b:Account
+              VarLengthExpand(Pruning,BFS,All)@neo4j   rows        453  dbHits        1,885  (a)-[:OWNS|USED_DEVICE*..10]-(b) 
+                NodeUniqueIndexSeek@neo4j                rows          1  dbHits            2  UNIQUE a:Account(account_id) WHERE account_id = $account
+--- Neo4j Q7_B_bound6: total dbHits 26,607, result available after 23 ms, consumed after 120 ms
+ProduceResults@neo4j                     rows          1  dbHits            0  length
+  Projection@neo4j                         rows          1  dbHits            0  length((a)-[anon_6*]->(b)) AS length
+    Apply@neo4j                              rows          1  dbHits            0  
+      CartesianProduct@neo4j                   rows          1  dbHits            0  
+        Filter@neo4j                             rows          1  dbHits            1  a.role = $autostring_0
+          NodeUniqueIndexSeek@neo4j                rows          1  dbHits            2  UNIQUE a:Account(account_id) WHERE account_id = $account
+        Filter@neo4j                             rows          1  dbHits            1  cache[b.role] = $autostring_1
+          NodeUniqueIndexSeek@neo4j                rows          1  dbHits            2  UNIQUE b:Account(account_id) WHERE account_id = $destination
+      Optional@neo4j                           rows          1  dbHits            0  a, b
+        ShortestPath@neo4j                       rows          1  dbHits       26,600  anon_12 = (a)-[anon_6:TRANSFER*..6]->(b) WHERE all(anon_11 IN relationships(anon_12) WHERE
+          Filter@neo4j                             rows          1  dbHits            1  cache[b.role] = $autostring_2 AND b:Account
+            Argument@neo4j                           rows          1  dbHits            0  a, b

@@ -1,0 +1,10 @@
+.venv/
+.env
+__pycache__/
+.DS_Store
+# captured data and import copies stay local (regenerate with capture.py / prepare_import.py)
+data/
+import/
+# full-resolution screenshots stay local; compressed copies are in report/images/
+screenshots/
+report/report.html

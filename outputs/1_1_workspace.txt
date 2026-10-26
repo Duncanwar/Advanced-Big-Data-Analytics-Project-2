@@ -1,0 +1,39 @@
+=== machine
+CPU            Apple M2 (8 cores)
+RAM            8.6 GB
+OS             macOS 14.6.1 (arm64)
+
+=== software and drivers
+Python         3.13.2
+numpy          2.5.4
+psycopg        3.3.6
+neo4j          6.4.1
+matplotlib     3.11.2
+generator      sha256 2ea0e59d2b7b987d84a3d151bd9d1ad7b3052bfbc25abf1466c8e94467e9455a
+
+=== PostgreSQL connection (dbname=momo)
+PostgreSQL 16.8 (Postgres.app) on aarch64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.102), 64-bit
+('momo', 'ndanyuzweduncan')
+  effective_cache_size              4GB
+  maintenance_work_mem              64MB
+  max_connections                   100
+  max_parallel_workers_per_gather   2
+  shared_buffers                    128MB
+  TimeZone                          Africa/Kigali
+  work_mem                          4MB
+  SHOW timezone -> Africa/Kigali
+
+=== Neo4j connection (bolt://localhost:7687)
+  Neo4j Kernel 5.26.0 community
+  databases: [('neo4j', 'online', True), ('system', 'online', False)]
+  server.memory.heap.initial_size                     2.00GiB
+  server.memory.heap.max_size                         2.00GiB
+  server.memory.off_heap.block_cache_size             128
+  server.memory.off_heap.max_cacheable_block_size     512.00KiB
+  server.memory.off_heap.transaction_max_size         2.00GiB
+  server.memory.pagecache.directio                    false
+  server.memory.pagecache.flush.buffer.enabled        false
+  server.memory.pagecache.flush.buffer.size_in_pages  128
+  server.memory.pagecache.scan.prefetchers            4
+  server.memory.pagecache.size                        2.00GiB
+  server.memory.query_cache.per_db_cache_num_entries  1000

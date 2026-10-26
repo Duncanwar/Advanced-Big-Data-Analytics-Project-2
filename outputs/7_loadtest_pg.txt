@@ -1,0 +1,25 @@
+=== 7.1 load test: engine pg, 24 runs of 15s, timeout 60s
+pg  q4   clients  1 rep 1:  1023 requests,  1023 correct, 0 errors, 0 timeouts, elapsed  15.0s,   68.06 req/s, median     7.7 ms, p95    32.0 ms, CPU mean 33% max 52%
+pg  q4   clients  1 rep 2:  1044 requests,  1044 correct, 0 errors, 0 timeouts, elapsed  15.0s,   69.43 req/s, median     7.7 ms, p95    31.3 ms, CPU mean 29% max 40%
+pg  q4   clients  1 rep 3:  1047 requests,  1047 correct, 0 errors, 0 timeouts, elapsed  15.0s,   69.64 req/s, median     7.6 ms, p95    31.2 ms, CPU mean 27% max 52%
+pg  q4   clients  4 rep 1:  2226 requests,  2226 correct, 0 errors, 0 timeouts, elapsed  15.1s,  147.80 req/s, median    14.0 ms, p95    65.1 ms, CPU mean 59% max 77%
+pg  q4   clients  4 rep 2:  2508 requests,  2508 correct, 0 errors, 0 timeouts, elapsed  15.1s,  166.38 req/s, median    13.4 ms, p95    58.7 ms, CPU mean 60% max 73%
+pg  q4   clients  4 rep 3:  2412 requests,  2412 correct, 0 errors, 0 timeouts, elapsed  15.0s,  160.74 req/s, median    13.6 ms, p95    60.2 ms, CPU mean 64% max 72%
+pg  q4   clients  8 rep 1:  3117 requests,  3117 correct, 0 errors, 0 timeouts, elapsed  15.1s,  206.09 req/s, median    20.9 ms, p95    93.5 ms, CPU mean 71% max 97%
+pg  q4   clients  8 rep 2:  2898 requests,  2898 correct, 0 errors, 0 timeouts, elapsed  15.1s,  191.37 req/s, median    21.9 ms, p95   103.3 ms, CPU mean 71% max 98%
+pg  q4   clients  8 rep 3:  3063 requests,  3063 correct, 0 errors, 0 timeouts, elapsed  15.1s,  202.33 req/s, median    21.5 ms, p95    96.2 ms, CPU mean 74% max 85%
+pg  q4   clients 16 rep 1:  3084 requests,  3084 correct, 0 errors, 0 timeouts, elapsed  15.3s,  201.53 req/s, median    46.6 ms, p95   196.9 ms, CPU mean 73% max 82%
+pg  q4   clients 16 rep 2:  2940 requests,  2940 correct, 0 errors, 0 timeouts, elapsed  15.3s,  192.22 req/s, median    47.4 ms, p95   204.7 ms, CPU mean 70% max 81%
+pg  q4   clients 16 rep 3:  3108 requests,  3108 correct, 0 errors, 0 timeouts, elapsed  15.3s,  203.71 req/s, median    45.2 ms, p95   197.2 ms, CPU mean 73% max 95%
+pg  q7   clients  1 rep 1:   387 requests,   387 correct, 0 errors, 0 timeouts, elapsed  15.1s,   25.69 req/s, median    39.0 ms, p95    41.7 ms, CPU mean 43% max 75%
+pg  q7   clients  1 rep 2:   387 requests,   387 correct, 0 errors, 0 timeouts, elapsed  15.1s,   25.62 req/s, median    39.2 ms, p95    41.8 ms, CPU mean 34% max 52%
+pg  q7   clients  1 rep 3:   384 requests,   384 correct, 0 errors, 0 timeouts, elapsed  15.0s,   25.57 req/s, median    39.2 ms, p95    42.0 ms, CPU mean 30% max 44%
+pg  q7   clients  4 rep 1:   960 requests,   960 correct, 0 errors, 0 timeouts, elapsed  15.1s,   63.62 req/s, median    60.1 ms, p95    90.7 ms, CPU mean 65% max 75%
+pg  q7   clients  4 rep 2:   780 requests,   780 correct, 0 errors, 0 timeouts, elapsed  15.0s,   51.95 req/s, median    78.5 ms, p95    92.0 ms, CPU mean 66% max 75%
+pg  q7   clients  4 rep 3:   816 requests,   816 correct, 0 errors, 0 timeouts, elapsed  15.2s,   53.79 req/s, median    73.4 ms, p95    92.5 ms, CPU mean 64% max 74%
+pg  q7   clients  8 rep 1:   945 requests,   945 correct, 0 errors, 0 timeouts, elapsed  15.3s,   61.65 req/s, median   127.9 ms, p95   150.7 ms, CPU mean 78% max 100%
+pg  q7   clients  8 rep 2:   927 requests,   927 correct, 0 errors, 0 timeouts, elapsed  15.3s,   60.68 req/s, median   129.1 ms, p95   156.2 ms, CPU mean 77% max 79%
+pg  q7   clients  8 rep 3:   936 requests,   936 correct, 0 errors, 0 timeouts, elapsed  15.2s,   61.45 req/s, median   127.6 ms, p95   152.4 ms, CPU mean 78% max 85%
+pg  q7   clients 16 rep 1:   861 requests,   861 correct, 0 errors, 0 timeouts, elapsed  15.7s,   54.88 req/s, median   268.7 ms, p95   454.0 ms, CPU mean 78% max 83%
+pg  q7   clients 16 rep 2:   912 requests,   912 correct, 0 errors, 0 timeouts, elapsed  15.5s,   58.66 req/s, median   266.2 ms, p95   341.0 ms, CPU mean 77% max 80%
+pg  q7   clients 16 rep 3:   912 requests,   912 correct, 0 errors, 0 timeouts, elapsed  15.4s,   59.19 req/s, median   264.7 ms, p95   322.8 ms, CPU mean 71% max 85%

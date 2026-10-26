@@ -1,0 +1,14 @@
+ProduceResults@neo4j                     rows          1  dbHits            0  length
+  Projection@neo4j                         rows          1  dbHits            0  length((a)-[anon_6*]->(b)) AS length
+    Apply@neo4j                              rows          1  dbHits            0  
+      CartesianProduct@neo4j                   rows          1  dbHits            0  
+        Filter@neo4j                             rows          1  dbHits            1  a.role = $autostring_0
+          NodeUniqueIndexSeek@neo4j                rows          1  dbHits            2  UNIQUE a:Account(account_id) WHERE account_id = $account
+        Filter@neo4j                             rows          1  dbHits            1  cache[b.role] = $autostring_1
+          NodeUniqueIndexSeek@neo4j                rows          1  dbHits            2  UNIQUE b:Account(account_id) WHERE account_id = $destination
+      Optional@neo4j                           rows          1  dbHits            0  a, b
+        ShortestPath@neo4j                       rows          1  dbHits       26,600  anon_12 = (a)-[anon_6:TRANSFER*..6]->(b) WHERE all(anon_11 IN relationships(anon_12) WHERE
+          Filter@neo4j                             rows          1  dbHits            1  cache[b.role] = $autostring_2 AND b:Account
+            Argument@neo4j                           rows          1  dbHits            0  a, b
+
+total dbHits 26,607

@@ -1,0 +1,25 @@
+=== 7.1 load test: engine neo, 24 runs of 15s, timeout 60s
+neo q4   clients  1 rep 1:  5715 requests,  5715 correct, 0 errors, 0 timeouts, elapsed  15.0s,  380.91 req/s, median     2.0 ms, p95     4.6 ms, CPU mean 40% max 60%
+neo q4   clients  1 rep 2:  6072 requests,  6072 correct, 0 errors, 0 timeouts, elapsed  15.0s,  404.74 req/s, median     1.9 ms, p95     4.5 ms, CPU mean 40% max 59%
+neo q4   clients  1 rep 3:  6033 requests,  6033 correct, 0 errors, 0 timeouts, elapsed  15.0s,  402.14 req/s, median     1.9 ms, p95     4.5 ms, CPU mean 33% max 59%
+neo q4   clients  4 rep 1: 19248 requests, 19248 correct, 0 errors, 0 timeouts, elapsed  15.0s, 1282.96 req/s, median     2.0 ms, p95     6.9 ms, CPU mean 70% max 89%
+neo q4   clients  4 rep 2: 17256 requests, 17256 correct, 0 errors, 0 timeouts, elapsed  15.0s, 1149.36 req/s, median     2.0 ms, p95     7.3 ms, CPU mean 67% max 75%
+neo q4   clients  4 rep 3: 16308 requests, 16308 correct, 0 errors, 0 timeouts, elapsed  15.0s, 1086.88 req/s, median     2.1 ms, p95     8.3 ms, CPU mean 59% max 84%
+neo q4   clients  8 rep 1: 22773 requests, 22773 correct, 0 errors, 0 timeouts, elapsed  15.1s, 1506.44 req/s, median     3.7 ms, p95    11.8 ms, CPU mean 73% max 83%
+neo q4   clients  8 rep 2: 21762 requests, 21762 correct, 0 errors, 0 timeouts, elapsed  15.1s, 1445.81 req/s, median     3.7 ms, p95    13.8 ms, CPU mean 69% max 84%
+neo q4   clients  8 rep 3: 20190 requests, 20190 correct, 0 errors, 0 timeouts, elapsed  15.1s, 1339.67 req/s, median     4.0 ms, p95    14.7 ms, CPU mean 65% max 80%
+neo q4   clients 16 rep 1: 20505 requests, 20505 correct, 0 errors, 0 timeouts, elapsed  15.0s, 1362.79 req/s, median     7.7 ms, p95    35.2 ms, CPU mean 73% max 100%
+neo q4   clients 16 rep 2: 20163 requests, 20163 correct, 0 errors, 0 timeouts, elapsed  15.0s, 1340.28 req/s, median     7.6 ms, p95    36.2 ms, CPU mean 70% max 99%
+neo q4   clients 16 rep 3: 18810 requests, 18810 correct, 0 errors, 0 timeouts, elapsed  15.0s, 1250.11 req/s, median     8.2 ms, p95    40.0 ms, CPU mean 70% max 82%
+neo q7   clients  1 rep 1:  3735 requests,  3735 correct, 0 errors, 0 timeouts, elapsed  15.0s,  248.83 req/s, median     4.7 ms, p95     6.5 ms, CPU mean 41% max 62%
+neo q7   clients  1 rep 2:  3672 requests,  3672 correct, 0 errors, 0 timeouts, elapsed  15.0s,  244.73 req/s, median     4.7 ms, p95     6.6 ms, CPU mean 37% max 56%
+neo q7   clients  1 rep 3:  3627 requests,  3627 correct, 0 errors, 0 timeouts, elapsed  15.0s,  241.56 req/s, median     4.7 ms, p95     7.4 ms, CPU mean 36% max 50%
+neo q7   clients  4 rep 1: 11448 requests, 11448 correct, 0 errors, 0 timeouts, elapsed  15.0s,  762.33 req/s, median     5.1 ms, p95    11.6 ms, CPU mean 60% max 83%
+neo q7   clients  4 rep 2: 10290 requests, 10290 correct, 0 errors, 0 timeouts, elapsed  15.0s,  685.22 req/s, median     6.6 ms, p95    11.4 ms, CPU mean 62% max 70%
+neo q7   clients  4 rep 3: 10608 requests, 10608 correct, 0 errors, 0 timeouts, elapsed  15.0s,  706.44 req/s, median     6.5 ms, p95    10.5 ms, CPU mean 59% max 76%
+neo q7   clients  8 rep 1: 13584 requests, 13584 correct, 0 errors, 0 timeouts, elapsed  15.0s,  903.15 req/s, median     7.9 ms, p95    17.7 ms, CPU mean 62% max 79%
+neo q7   clients  8 rep 2: 12486 requests, 12486 correct, 0 errors, 0 timeouts, elapsed  15.1s,  825.26 req/s, median     8.2 ms, p95    23.6 ms, CPU mean 61% max 83%
+neo q7   clients  8 rep 3: 10527 requests, 10527 correct, 0 errors, 0 timeouts, elapsed  15.2s,  693.50 req/s, median     9.4 ms, p95    29.6 ms, CPU mean 62% max 95%
+neo q7   clients 16 rep 1:  7962 requests,  7962 correct, 0 errors, 0 timeouts, elapsed  15.2s,  524.49 req/s, median    25.2 ms, p95    72.6 ms, CPU mean 75% max 99%
+neo q7   clients 16 rep 2:  7848 requests,  7848 correct, 0 errors, 0 timeouts, elapsed  15.3s,  514.50 req/s, median    26.7 ms, p95    71.8 ms, CPU mean 77% max 100%
+neo q7   clients 16 rep 3:  8070 requests,  8070 correct, 0 errors, 0 timeouts, elapsed  15.2s,  529.39 req/s, median    25.1 ms, p95    70.1 ms, CPU mean 76% max 87%

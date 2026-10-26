@@ -1,0 +1,77 @@
+=== row counts (expected 228000 / 248000 / 228600 / 285600 / 20003300)
+   table_name    |   rows   
+-----------------+----------
+ customers       |   228000
+ accounts        |   248000
+ devices         |   228600
+ account_devices |   285600
+ transfers       | 20003300
+ TOTAL           | 20993500
+
+=== account roles (expected person 240000, merchant 6000, agent 2000)
+   role   | accounts 
+----------+----------
+ person   |   240000
+ merchant |     6000
+ agent    |     2000
+
+=== transfer audit totals (compare with capture.py)
+ transfer_count | earliest_occurred_at |      earliest_cat      | latest_occurred_at |       latest_cat       | sum_amount_rwf 
+----------------+----------------------+------------------------+--------------------+------------------------+----------------
+       20003300 |           1788235200 | 2026-09-01 06:00:00+02 |         1790798399 | 2026-09-30 21:59:59+02 |   231482327870
+
+=== constraints (convalidated = t means every existing row was checked)
+   table_name    |            constraint_name            |    type     | convalidated |                                 definition                                  
+-----------------+---------------------------------------+-------------+--------------+-----------------------------------------------------------------------------
+ account_devices | account_devices_day_range             | CHECK       | t            | CHECK (((0 <= first_day) AND (first_day <= last_day) AND (last_day <= 29)))
+ account_devices | account_devices_observations_positive | CHECK       | t            | CHECK ((observations > 0))
+ account_devices | account_devices_account_fk            | FOREIGN KEY | t            | FOREIGN KEY (account_id) REFERENCES accounts(account_id)
+ account_devices | account_devices_device_fk             | FOREIGN KEY | t            | FOREIGN KEY (device_id) REFERENCES devices(device_id)
+ account_devices | account_devices_pkey                  | PRIMARY KEY | t            | PRIMARY KEY (account_id, device_id)
+ accounts        | accounts_customer_fk                  | FOREIGN KEY | t            | FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+ accounts        | accounts_pkey                         | PRIMARY KEY | t            | PRIMARY KEY (account_id)
+ customers       | customers_pkey                        | PRIMARY KEY | t            | PRIMARY KEY (customer_id)
+ devices         | devices_pkey                          | PRIMARY KEY | t            | PRIMARY KEY (device_id)
+ transfers       | transfers_amount_positive             | CHECK       | t            | CHECK ((amount_rwf > 0))
+ transfers       | transfers_receiver_fk                 | FOREIGN KEY | t            | FOREIGN KEY (receiver_id) REFERENCES accounts(account_id)
+ transfers       | transfers_sender_fk                   | FOREIGN KEY | t            | FOREIGN KEY (sender_id) REFERENCES accounts(account_id)
+ transfers       | transfers_pkey                        | PRIMARY KEY | t            | PRIMARY KEY (transfer_id)
+
+=== NOT NULL columns
+   table_name    | columns | not_null_columns 
+-----------------+---------+------------------
+ account_devices |       5 |                5
+ accounts        |       3 |                3
+ customers       |       2 |                2
+ devices         |       2 |                2
+ transfers       |       5 |                5
+
+=== indexes
+   table_name    |             index_name             |                                                                    definition                                                                    
+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------
+ account_devices | account_devices_device_account_idx | CREATE INDEX account_devices_device_account_idx ON public.account_devices USING btree (device_id, account_id)
+ account_devices | account_devices_pkey               | CREATE UNIQUE INDEX account_devices_pkey ON public.account_devices USING btree (account_id, device_id)
+ accounts        | accounts_customer_account_idx      | CREATE INDEX accounts_customer_account_idx ON public.accounts USING btree (customer_id, account_id)
+ accounts        | accounts_pkey                      | CREATE UNIQUE INDEX accounts_pkey ON public.accounts USING btree (account_id)
+ customers       | customers_pkey                     | CREATE UNIQUE INDEX customers_pkey ON public.customers USING btree (customer_id)
+ devices         | devices_pkey                       | CREATE UNIQUE INDEX devices_pkey ON public.devices USING btree (device_id)
+ transfers       | transfers_occurred_brin            | CREATE INDEX transfers_occurred_brin ON public.transfers USING brin (occurred_at)
+ transfers       | transfers_pkey                     | CREATE UNIQUE INDEX transfers_pkey ON public.transfers USING btree (transfer_id)
+ transfers       | transfers_receiver_time_idx        | CREATE INDEX transfers_receiver_time_idx ON public.transfers USING btree (receiver_id, occurred_at) INCLUDE (sender_id, amount_rwf, transfer_id)
+ transfers       | transfers_sender_time_idx          | CREATE INDEX transfers_sender_time_idx ON public.transfers USING btree (sender_id, occurred_at) INCLUDE (receiver_id, amount_rwf, transfer_id)
+
+=== sizes (1 GB = 1,000,000,000 bytes)
+   table_name    | data_gb | index_gb | total_gb 
+-----------------+---------+----------+----------
+ customers       |   0.010 |    0.005 |    0.015
+ devices         |   0.010 |    0.005 |    0.015
+ accounts        |   0.011 |    0.011 |    0.023
+ account_devices |   0.013 |    0.013 |    0.026
+ transfers       |   1.206 |    2.434 |    3.639
+ ALL TABLES      |   1.250 |    2.468 |    3.718
+
+=== whole database size
+ current_database | database_gb 
+------------------+-------------
+ momo             |       3.726
+
