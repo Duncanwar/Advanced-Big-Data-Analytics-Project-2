@@ -1,6 +1,6 @@
 ---
 title: "Mobile Money Investigations with PostgreSQL and Neo4j"
-subtitle: "Advanced Big Data Analytics, Project 2. Report: Sections 1 to 7"
+subtitle: "Advanced Big Data Analytics"
 author:
   - "Ndanyuzwe Duncan, Student ID 101413"
   - "Byiringiro Eric, Student ID 101389"
