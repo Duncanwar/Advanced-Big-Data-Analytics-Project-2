@@ -831,16 +831,9 @@ Retiming with equal memory could shrink the difference further.
 
 All three members reviewed the full report.
 
-**LLM and external assistance.** Claude (Anthropic), a large language model, used in Claude Code, helped
-with:
-
-- setting up the environment on the MacBook (Python virtual environment and drivers, the PostgreSQL project
-  database, the Neo4j Community instance and its configuration);
-- writing the Python, SQL and Cypher code;
-- running the capture, loads, queries, benchmarks and load tests on this machine;
-- capturing the screenshots of those real runs;
-- drafting the report text and figures, including first drafts of the three individual notes above, which
-  each member reviewed against the measured results.
+**LLM and external assistance.** Claude (Anthropic) assisted with environment setup, code, running the
+experiments and screenshots, and drafting the report, including first drafts of the individual notes,
+which each member reviewed. Every result was verified as described below.
 
 **How the work was checked:**
 
