@@ -2,9 +2,9 @@
 title: "Mobile Money Investigations with PostgreSQL and Neo4j"
 subtitle: "Advanced Big Data Analytics, Project 2. Report: Sections 1 to 7"
 author:
-  - "Ndanyuzwe Duncan, Student ID: [add ID]"
-  - "[Member 2 name, Student ID]"
-  - "[Member 3 name, Student ID]"
+  - "Ndanyuzwe Duncan, Student ID 101413"
+  - "Byiringiro Eric, Student ID 101389"
+  - "Mfuranzima Sandrine, Student ID 101411"
 date: "26 October 2026"
 ---
 
@@ -355,11 +355,31 @@ instead of enumerating every path. All **24 comparisons match**.
 | E (144228) | 47 | 183 | 193 | 230 |
 | F (203978) | 147 | 488 | 837 | 1,426 |
 
-**Prediction.** [Group: record here the counts you predicted for depths 8 and 10, and why, before
-running them.] The structure suggests the following expectation. Each extra pair of links adds one more
-"account, then shared device" hop. Growth should therefore slow once the shared handsets near the review
-account are exhausted (A/D and B/E level off at about 180–230 accounts). It should keep growing wherever a
-replacement handset or a shared phone links into other households (C/F reach about 1,430).
+**Prediction.** We built the prediction from depths 4 and 6 only.
+
+- **Method.** Every two links add one "account, then shared device" hop, so we treated the search as a
+  breadth-first expansion with a constant branching factor. The growth ratio from depth 4 to 6 (r = n6 / n4)
+  is applied again for depth 8 (n8 = n6 × r) and depth 10 (n10 = n8 × n8 / n6). That is a geometric
+  extrapolation of the frontier.
+- **Expectation.** A constant fan-out only holds while the frontier keeps meeting new devices. Once it has
+  absorbed every device reachable from the review account's neighbourhood, growth should stall at the size
+  of that connected component.
+
+| Set | Predicted depth 8 | Actual depth 8 | Predicted depth 10 | Actual depth 10 |
+|---|---:|---:|---:|---:|
+| A | 185 | 175 | 796 | 187 |
+| B | 689 | 188 | 2,667 | 228 |
+| C | 1,598 | 832 | 5,287 | 1,433 |
+| D | 194 | 180 | 855 | 192 |
+| E | 713 | 193 | 2,778 | 230 |
+| F | 1,620 | 837 | 5,378 | 1,426 |
+
+The geometric model is close for A and D at depth 8, then overshoots everywhere at depth 10, by 3.7–12×. The
+fan-out is not constant. A/D and B/E saturate at about 190–230 accounts, because their 228xxx handsets and
+household phones lead to a small, closed neighbourhood: the frontier runs out of new devices. C/F keep
+growing, more slowly than predicted, because a replacement handset and a shared household phone bridge into
+further households, each adding a few accounts rather than multiplying them. The useful lesson is that reach
+in this network depends on bridges, not on depth alone.
 
 **How deeper links introduce weak associations.** The supporting path below reaches account 2984 from
 set B's account 147228 in 10 links. It passes through five different devices and four intermediate accounts,
@@ -768,31 +788,59 @@ an out-of-date graph could also contradict the PostgreSQL reports.
 
 ## 8.3 Explain individual judgement
 
-**Individual notes.** Each member writes 150–200 words in their own words about a different measured
-finding: what it is, why it happened, and a check that could overturn it. The notes must be the members'
-own work.
+**Ndanyuzwe Duncan (101413): loading cost is mostly index cost.** PostgreSQL loaded all 20,003,300
+transfers with `\copy` in 19.0 seconds. Building the primary keys, foreign keys and secondary indexes
+afterwards took 98 seconds, five times the load itself. The two covering indexes on `transfers` alone took
+58 seconds, and the table's indexes occupy 2.43 GB against 1.21 GB of table data. That happens because each `INCLUDE`
+column is copied into the index, so the index-only scans that make Q1 and Q5 fast are paid for at load time
+and in storage. Neo4j's offline import wrote 704,600 nodes and 20,536,900 relationships in about 35 seconds
+plus 33 seconds for constraints, in 2.06 GB, because adjacency is written once into the record store. One
+check could overturn this: the Neo4j import ranged from 35 to 70 seconds across three runs when free memory
+was low. The comparison should be repeated on a machine with nothing else running, and with the PostgreSQL
+indexes created before loading, before claiming either engine loads faster.
 
-**[Ndanyuzwe Duncan, 150–200 words]**
+**Byiringiro Eric (101389): deeper network links mostly measure shared phones.** In Q4, account 998 reaches
+187 other accounts within ten ownership and device links, while account 206978 reaches 1,433, spread evenly
+over all five regions. The supporting path for set B crosses five devices and four unrelated accounts before
+reaching account 2984, with no shared owner anywhere along it. The width comes from bridges: a replacement
+handset or a household phone joins one neighbourhood to the next, so each extra pair of links adds whole
+households. That is why our geometric prediction failed at depth 10. Beyond about four links, the count
+says more about how phones are shared in this dataset than about the account under review. A check that could
+overturn this: rerun Q4 counting only devices with overlapping observation days, and excluding devices
+seen with more than five accounts. If sets C and F still reach over a thousand accounts, the wide network is
+a real property of those accounts rather than an artefact of shared handsets.
 
-**[Member 2, 150–200 words]**
+**Mfuranzima Sandrine (101411): Neo4j's Q7 advantage was mostly an algorithm advantage.** Our first
+recursive SQL took 29.7 seconds for the shortest route at bound 6, against 7.6 milliseconds in Neo4j, a
+ratio of about 3,900. The plan showed why: `UNION` only removes duplicate account-and-depth pairs, so the
+same accounts were expanded again at every depth. That meant 427,955 working rows and 14.6 million role
+lookups to find a single account at depth 5. Rewriting the query to search three steps forward from the
+review account and three steps backward from the destination, joining where the two walks meet, cut it to
+38 milliseconds. All twelve answers stayed the same. The remaining gap is only about five times, and under
+16 concurrent clients Neo4j still delivered about nine times the throughput. A check that could overturn
+the remaining gap: PostgreSQL ran with 128 MB of shared buffers while Neo4j had a 2 GiB page cache.
+Retiming with equal memory could shrink the difference further.
 
-**[Member 3, 150–200 words]**
+**Contributions.** The work was divided by the pages of the brief.
 
-Suggested findings, one per member:
+| Member | Brief pages | Work |
+|---|---|---|
+| **Ndanyuzwe Duncan** | 1–3 | Sections 1–3: workspace and environment set-up, `capture.py`, PostgreSQL tables, constraints, bulk load and checks, the Neo4j import and checks, and the 3.3 inspection of one account in both models. |
+| **Byiringiro Eric** | 4–6 | Sections 4–5: the Q1 to Q7 SQL/Cypher query pairs, the Q2 and Q4 charts, and the investigation evidence (shared devices, the ownership network, rapid onward payments, cycles and shortest routes). |
+| **Mfuranzima Sandrine** | 7–9 | Sections 6–9: the 61-case comparison program, timing and plans, the Q7 SQL improvement, the concurrent load test, the investigation priorities and model recommendation, and the submission. |
 
-- the 3,900× → 5× Q7 change after the SQL rewrite;
-- Q2 taking 4.7 s in PostgreSQL against 58.7 s in Neo4j;
-- throughput levelling off at about 8 clients.
-
-**Contributions.** [Group: list who did what.]
+All three members reviewed the full report.
 
 **LLM and external assistance.** Claude (Anthropic), a large language model, used in Claude Code, helped
 with:
 
+- setting up the environment on the MacBook (Python virtual environment and drivers, the PostgreSQL project
+  database, the Neo4j Community instance and its configuration);
 - writing the Python, SQL and Cypher code;
 - running the capture, loads, queries, benchmarks and load tests on this machine;
 - capturing the screenshots of those real runs;
-- drafting the report text and figures.
+- drafting the report text and figures, including first drafts of the three individual notes above, which
+  each member reviewed against the measured results.
 
 **How the work was checked:**
 
@@ -801,7 +849,8 @@ with:
 - row counts and audit totals were reconciled across capture.py, PostgreSQL and Neo4j;
 - timings come from saved raw runs (`outputs/6_2_runs_*.csv`, `outputs/7_runs.csv`).
 
-[Group: confirm or edit this statement. Each member must be able to explain the work.]
+All results in this report come from real runs on the machine described in Section 1.1. Each member can
+explain the work in their own sections.
 
 # 9 Submit reproducible work
 
