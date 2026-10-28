@@ -1,5 +1,5 @@
 @page { size: A4; margin: 16mm 15mm 18mm 15mm; }
-body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10pt; line-height: 1.45;
+body { font-family: "Times New Roman", Times, serif; font-size: 11pt; line-height: 1.45;
        color: #0b0b0b; max-width: none; margin: 0; }
 header#title-block-header { text-align: center; padding: 70mm 0 20mm; page-break-after: always; }
 h1.title { font-size: 24pt; margin-bottom: 6pt; }
