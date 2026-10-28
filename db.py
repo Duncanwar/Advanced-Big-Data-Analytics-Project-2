@@ -1,8 +1,4 @@
-"""Persistent PostgreSQL and Neo4j connections with run_pg / run_neo wrappers.
-
-Both wrappers return every result row as a tuple of plain Python values, so the
-two engines' answers can be normalized, sorted and compared exactly.
-"""
+"""Persistent PostgreSQL and Neo4j connections with run_pg / run_neo wrappers."""
 import datetime as dt
 from decimal import Decimal
 
@@ -34,7 +30,7 @@ def neo():
 def run_pg(query, params=None):
     with pg().cursor() as cur:
         cur.execute(query, params)
-        if cur.description is None:  # SET, DDL and other statements without rows
+        if cur.description is None:
             return []
         return [tuple(row) for row in cur.fetchall()]
 

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-# 3.2 Rebuild the Neo4j graph end to end: typed import copies, offline full import,
-# constraints/index, checks, then remove the temporary copies.
-#   ./neo4j_import.sh
+# 3.2 Rebuild the Neo4j graph end to end with an offline full import.
 set -euo pipefail
 cd "$(dirname "$0")"
 set -a; . ./.env; set +a

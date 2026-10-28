@@ -1,7 +1,4 @@
-"""Capture the five mobile-money streams to CSV files, with row counts and audit totals.
-
-Rows are written one at a time as they are generated; no stream is ever held in memory.
-"""
+"""Capture the five mobile-money streams to CSV files, with row counts and audit totals."""
 import csv
 import os
 import time
@@ -30,7 +27,6 @@ def preview(n=10):
     print('\n=== FIELDS ===')
     pprint(g.FIELDS, sort_dicts=False)
     for name, stream in STREAMS.items():
-        # A fresh call restarts the stream, so previewing does not affect the capture.
         print(f'\n=== {name}: first {n} records ===')
         for row in islice(stream(), n):
             print(row)
@@ -49,7 +45,6 @@ def capture(name, stream):
             writer.writerow(row)
             written += 1
             if name == 'transfers':
-                # Transfers are not time-sorted, so track min and max explicitly.
                 t = row['occurred_at']
                 audit['count'] += 1
                 audit['amount_rwf'] += row['amount_rwf']

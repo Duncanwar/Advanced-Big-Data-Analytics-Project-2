@@ -1,12 +1,4 @@
-"""6.2 / 6.3 Timing: 21 fixed cases per engine, 3 untimed warm-ups then 5 measured runs each.
-
-Run one engine at a time with the other database service stopped:
-  python bench.py --engine pg  [--q7 bidir --only Q7 --tag improved]
-  python bench.py --engine neo
-  python bench.py --summary          # median/min/max ms and PostgreSQL/Neo4j median ratio
-Timing covers submission through final-row receipt on a persistent connection. Answers are
-checked against the 6.1 results outside the timer. Timeouts and errors are recorded separately.
-"""
+"""6.2 / 6.3 Timing: 21 fixed cases per engine, 3 untimed warm-ups then 5 measured runs each."""
 import argparse
 import csv
 import json
@@ -70,7 +62,7 @@ def bench(engine, cases, tag):
                     rows, status = None, 'ok'
                     start = time.perf_counter()
                     try:
-                        rows = run(case, timeout)      # consumes every row
+                        rows = run(case, timeout)
                     except (psycopg.errors.QueryCanceled, TimeoutError) as e:
                         status = 'timeout'
                     except ClientError as e:
@@ -120,7 +112,6 @@ def summary():
     print(f'{"case":<11}{"version":<10}{"PG median":>9}{"min":>9}{"max":>10}   {"Neo median":>9}{"min":>9}{"max":>10}'
           f'{"PG/Neo":>9}  wrong')
     for (case, tag), engines in stats.items():
-        # An improved SQL version is only re-timed on PostgreSQL; compare it with Neo4j's original timings.
         pg, neo = engines.get('pg'), engines.get('neo') or stats.get((case, 'original'), {}).get('neo')
         ratio = (f'{statistics.median(pg["ms"]) / statistics.median(neo["ms"]):9.2f}'
                  if pg and neo and pg['ms'] and neo['ms'] else f'{"-":>9}')

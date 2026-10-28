@@ -1,8 +1,4 @@
-"""Section 5: run Q4 to Q7 on both engines, compare the answers and show supporting evidence.
-
-  python run_part2.py            # everything
-  python run_part2.py q4 q7      # selected sections: q4, q5, q6, q7
-"""
+"""Section 5: run Q4 to Q7 on both engines, compare the answers and show supporting evidence."""
 import json
 import sys
 import time
@@ -65,8 +61,6 @@ def q4():
 
 
 def plot_q4(totals):
-    # One panel per set (pairs A/D, B/E, C/F stacked in columns): paired curves are nearly identical
-    # and would hide each other on a single chart.
     fig, axes = plt.subplots(2, 3, figsize=(11, 6), sharex=True)
     order = ('A', 'B', 'C', 'D', 'E', 'F')
     for ax, name in zip(axes.flat, order):

@@ -1,5 +1,4 @@
 // 3.2 Unique business IDs and a range index on TRANSFER.occurred_at.
-//   cypher-shell -u neo4j -p <password> -f cypher/01_constraints_indexes.cypher
 CREATE CONSTRAINT customer_id_unique IF NOT EXISTS FOR (c:Customer) REQUIRE c.customer_id IS UNIQUE;
 CREATE CONSTRAINT account_id_unique  IF NOT EXISTS FOR (a:Account)  REQUIRE a.account_id  IS UNIQUE;
 CREATE CONSTRAINT device_id_unique   IF NOT EXISTS FOR (d:Device)   REQUIRE d.device_id   IS UNIQUE;

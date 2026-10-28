@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # shot.sh <name> <command> [extra_delay_seconds]
-# Opens its OWN Terminal.app window in the project, types <command> at the real prompt,
-# waits for it to finish, captures the full screen (menu-bar clock + Dock), then closes
-# only that window (by id). Never touches other windows.
 set -euo pipefail
 PROJ="/Users/ndanyuzweduncan/Desktop/Masters/Semester_3/Big Data Analytics/Advanced-Big-Data-Analytics-Project-2"
 OUT="$PROJ/screenshots"
@@ -29,7 +26,6 @@ EOF
 )
 
 sleep 2
-# Done when the tab runs nothing but its shell on two consecutive checks.
 idle() { osascript -e "tell application \"Terminal\" to get processes of tab 1 of window id $wid" | tr -d ' ' | grep -qE '^(login,)?-?zsh$'; }
 until idle && sleep 2 && idle; do sleep 1; done
 sleep "$((1 + extra))"
@@ -40,6 +36,5 @@ fi
 screencapture -x "$OUT/$name.png"
 echo "saved $OUT/$name.png (window $wid)"
 if [ "${KEEP:-0}" != 1 ]; then
-  # The command has finished, so this window only runs an idle shell: close it, and only it.
   osascript -e "tell application \"Terminal\" to if not busy of tab 1 of window id $wid then close window id $wid saving no" >/dev/null 2>&1 || true
 fi

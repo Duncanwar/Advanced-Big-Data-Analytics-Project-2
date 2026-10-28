@@ -1,8 +1,4 @@
-"""Connection settings shared by every script.
-
-Values come from environment variables or a local .env file (not committed).
-Copy .env.example to .env and fill in your own password.
-"""
+"""Connection settings shared by every script."""
 import os
 from pathlib import Path
 

@@ -1,8 +1,4 @@
-"""Run 3.3 (inspect one account) and Q1 to Q3 on both engines and compare the answers.
-
-  python run_part1.py            # everything
-  python run_part1.py q1 q3      # selected sections: trace, q1, q2, q3
-"""
+"""Run 3.3 (inspect one account) and Q1 to Q3 on both engines and compare the answers."""
 import sys
 import time
 from datetime import datetime
@@ -18,7 +14,6 @@ from db import close, normalize, run_neo, run_pg
 from questions import (KIGALI, PAIRS_SQL, Q1_CYPHER, Q1_SQL, Q2_CYPHER, Q2_SQL, Q3_CYPHER, Q3_SQL,
                        REPEATS_CYPHER, REPEATS_SQL, SETS, TRACE_CYPHER, TRACE_SQL, set_params)
 
-# Capture audit totals from outputs/1_2_capture.txt.
 CAPTURE_COUNT = 20_003_300
 CAPTURE_SUM_RWF = 231_482_327_870
 
@@ -57,7 +52,6 @@ def trace():
     for receiver, count, total, first, last in pg_rows:
         print(f'   {receiver:>9}{count:>11}{total:>12,}  {cat(first)}  {cat(last)}')
     print('   match:', 'yes' if pg_rows == neo_rows else 'NO', f'({len(pg_rows)} repeated receivers)')
-    # The month-wide DISTINCT spills to disk for hours with the default 4MB work_mem.
     run_pg("SET work_mem = '512MB'")
     transfers, pairs = run_pg(PAIRS_SQL)[0]
     run_pg('RESET work_mem')
@@ -80,7 +74,6 @@ def q1():
 def q2():
     print('\n=== Q2 Daily activity (CAT days)')
     pg_rows, neo_rows, pg_s, neo_s = both(Q2_SQL, Q2_CYPHER)
-    # The quietest day count is the baseline; the excess column shows days above it.
     base = min(r[1] for r in pg_rows)
     print(f'{"date":<12}{"transfers":>11}{"total RWF":>18}{"above " + f"{base:,}":>16}')
     for day, count, total in pg_rows:

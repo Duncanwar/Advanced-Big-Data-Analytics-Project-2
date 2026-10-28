@@ -1,6 +1,4 @@
--- 2.2 Bulk-load the captured CSVs. Run from the project root:
---   psql -d momo -f sql/02_load.sql
--- Parents first: customers and devices, then accounts, account_devices, transfers.
+-- 2.2 Bulk-load the captured CSVs (run from the project root).
 \timing on
 \echo '--- loading customers'
 \copy customers FROM 'data/customers.csv' CSV HEADER

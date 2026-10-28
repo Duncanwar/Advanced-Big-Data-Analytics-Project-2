@@ -1,17 +1,10 @@
-"""3.2 Make temporary Neo4j import copies of the captured CSVs with typed headers.
-
-The source CSVs in data/ are left unchanged. Each copy replaces only the header
-line and streams the remaining rows across, so no file is held in memory.
-owns.csv is derived from accounts.csv in (customer_id, account_id) column order.
-"""
+"""3.2 Make temporary Neo4j import copies of the captured CSVs with typed headers."""
 import csv
 import shutil
 import time
 
 from config import DATA_DIR, IMPORT_DIR
 
-# Source file -> (import file, Neo4j typed header).
-# Customer, Account and Device each use their own ID group.
 HEADERS = {
     'customers.csv': ('customers.csv', 'customer_id:ID(Customer),region:string'),
     'accounts.csv': ('accounts.csv', 'account_id:ID(Account),:IGNORE,role:string'),
@@ -26,7 +19,7 @@ OWNS_HEADER = ':START_ID(Customer),:END_ID(Account)'
 
 def retype(source, target, header):
     with open(source, newline='') as src, open(target, 'w', newline='') as dst:
-        src.readline()  # skip the original header
+        src.readline()
         dst.write(header + '\n')
         shutil.copyfileobj(src, dst, 16 * 1024 * 1024)
 

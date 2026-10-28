@@ -2,7 +2,7 @@
 # Section 7 screenshots, 10 seconds apart. Each engine is load-tested with the other service stopped.
 cd "$(dirname "$0")/.."
 shot() { tools/shot.sh "$@"; sleep 10; }
-active_pg() {   # a 16-client demonstration run (rep 0, excluded from results) while showing the clients
+active_pg() {
   (.venv/bin/python loadtest.py --engine pg --workload q4 --clients 16 --rep 0 >/dev/null 2>&1 &)
   shot 41_7-1_active_clients_pg "sleep 9; psql -d momo -c \"SELECT application_name, state, count(*) AS clients FROM pg_stat_activity WHERE application_name = 'loadtest' GROUP BY 1, 2\"; ps -o pid,%cpu,etime,command -p \$(pgrep -d, -f 'multiprocessing.spawn') | cut -c1-120"
   sleep 15

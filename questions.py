@@ -1,16 +1,9 @@
-"""Parameterized SQL/Cypher pairs for the inspection trace (3.3) and Q1 to Q7.
-
-SQL placeholders %(name)s are psycopg parameters; Cypher uses $name.
-Cypher cannot take a variable-length bound as a parameter, so Q4 depth and Q7 bound
-are formatted into the Cypher text with q4_cypher(depth) / q7_cypher(bound).
-All answers come from stored data only, never from generator internals.
-"""
+"""Parameterized SQL/Cypher pairs for the inspection trace (3.3) and Q1 to Q7."""
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 KIGALI = ZoneInfo('Africa/Kigali')
 
-# Set: (review account, destination, September date)
 SETS = {
     'A': (998, 24755, 6),
     'B': (147228, 186823, 13),
@@ -58,7 +51,6 @@ ORDER BY d.device_id, t.transfer_id
 LIMIT 1
 """
 
-# 3.3 Repeated payments from one account: what a single collapsed edge would hide.
 REPEATS_SQL = """
 SELECT receiver_id, count(*) AS transfers, sum(amount_rwf) AS total_rwf,
        min(occurred_at) AS first_at, max(occurred_at) AS last_at
@@ -131,7 +123,6 @@ ORDER BY other_account, d.device_id
 """
 
 # Q4 Ownership and device network: distinct other accounts within `depth` OWNS/USED_DEVICE links,
-# in either direction, grouped by the reached account's owner region.
 Q4_SQL = """
 WITH RECURSIVE edges(sk, si, dk, di) AS (
     SELECT 'Customer'::text, customer_id, 'Account'::text, account_id FROM accounts
@@ -171,14 +162,12 @@ def q4_cypher(depth):
     return Q4_CYPHER.format(depth=int(depth))
 
 
-# One supporting path for Q4: a shortest ownership/device path to a given reached account.
 Q4_PATH_CYPHER = """
 MATCH (a:Account {account_id: $account}), (b:Account {account_id: $target})
 MATCH p = shortestPath((a)-[:OWNS|USED_DEVICE*..10]-(b))
 RETURN [n IN nodes(p) | labels(n)[0] + ' ' + toString(coalesce(n.account_id, n.customer_id, n.device_id))] AS path,
        length(p) AS links
 """
-# The reached account farthest from the review account (largest minimum depth), for that example.
 Q4_FARTHEST_SQL = Q4_SQL.split('SELECT c.region')[0] + """
 SELECT w.id, MIN(w.depth) AS depth
 FROM walk w
@@ -220,7 +209,6 @@ ORDER BY t1.transfer_id, t2.transfer_id, t3.transfer_id, d.account_id
 """
 
 # Q6 Circular payments: 3 to 8 transfers from and back to the review account, all in its hour,
-# strictly increasing times, span <= 1800 s, Q5 amount rule, stopping at the first return.
 Q6_SQL = """
 WITH RECURSIVE walk(account, ids, first_at, last_at, last_amount, len) AS (
     SELECT receiver_id, ARRAY[transfer_id], occurred_at, occurred_at, amount_rwf, 1
@@ -230,7 +218,7 @@ WITH RECURSIVE walk(account, ids, first_at, last_at, last_amount, len) AS (
     SELECT t.receiver_id, w.ids || t.transfer_id, w.first_at, t.occurred_at, t.amount_rwf, w.len + 1
     FROM walk w
     JOIN transfers t ON t.sender_id = w.account
-    WHERE w.account <> %(account)s          -- stop at the first return
+    WHERE w.account <> %(account)s
       AND w.len < 8
       AND t.occurred_at > w.last_at AND t.occurred_at < %(end)s
       AND t.occurred_at <= w.first_at + 1800
@@ -251,7 +239,6 @@ WHERE all(i IN range(0, size(t) - 2) WHERE t[i].occurred_at < t[i + 1].occurred_
 RETURN [x IN t | x.transfer_id] AS ids, size(t) AS len
 ORDER BY ids
 """
-# Details of one chain or cycle for screenshots: ids, CAT times, amounts.
 TRANSFER_DETAILS_SQL = """
 SELECT transfer_id, sender_id, receiver_id, occurred_at,
        to_char(to_timestamp(occurred_at), 'YYYY-MM-DD HH24:MI:SS') AS cat_time, amount_rwf
@@ -260,7 +247,6 @@ ORDER BY occurred_at
 """
 
 # Q7 Shortest transfer connection: fewest directed transfers from review account to destination,
-# every account on the route a person, amounts and time order ignored, within `bound`.
 Q7_SQL = """
 WITH RECURSIVE walk(account, depth) AS (
     SELECT account_id, 0 FROM accounts
@@ -294,7 +280,6 @@ def q7_path_cypher(bound):
     return Q7_PATH_CYPHER.format(bound=int(bound))
 
 
-# Path check in SQL: every hop exists, runs sender -> receiver in order, and both ends are persons.
 Q7_PATH_CHECK_SQL = """
 SELECT h.step, t.transfer_id, t.sender_id, t.receiver_id, s.role, r.role,
        t.sender_id = (%(accounts)s::int[])[h.step] AND t.receiver_id = (%(accounts)s::int[])[h.step + 1] AS links_in_order
@@ -306,8 +291,6 @@ ORDER BY h.step
 """
 
 # 6.3 SQL improvement for Q7: search from both ends. The forward walk goes ceil(bound/2) steps from
-# the review account, the backward walk floor(bound/2) steps into the destination; any route of
-# length L <= bound has a meeting account m with forward depth + backward depth = L.
 Q7_SQL_BIDIRECTIONAL = """
 WITH RECURSIVE fwd(account, depth) AS (
     SELECT account_id, 0 FROM accounts

@@ -1,15 +1,4 @@
-"""7.1 Concurrent requests: Q4 depth 10 and Q7 length-only bound 6, cycling sets A-B-C.
-
-Each client is a process with one persistent connection. Clients warm up A-B-C once, then wait on a
-Barrier; its release sets a common start time and a deadline 15 s later. Clients start cycles until
-the deadline, finish any started cycle, and send each request immediately after the previous one.
-Correctness is checked after timing against the 6.1 answers.
-
-  python loadtest.py --engine pg --all        # both workloads x 1/4/8/16 clients x 3 repetitions
-  python loadtest.py --engine neo --all
-  python loadtest.py --engine pg --workload q7 --clients 16 --rep 1    # a single run
-  python loadtest.py --summary                # medians of repetitions + plots
-"""
+"""7.1 Concurrent requests: Q4 depth 10 and Q7 length-only bound 6, cycling sets A-B-C."""
 import argparse
 import csv
 import json
@@ -67,7 +56,7 @@ def client(cid, engine, workload, barrier, start_at, deadline_at, results):
                 return [tuple(r.values()) for r in session.run(Query(cypher, timeout=TIMEOUT), params)]
 
     requests = [request_for(workload, name) for name in SETS_CYCLE]
-    for sql, cypher, params, _ in requests:          # warm-up cycle A-B-C
+    for sql, cypher, params, _ in requests:
         run(sql, cypher, params)
     barrier.wait()
     deadline = deadline_at.value
@@ -161,7 +150,7 @@ def expected_answers():
 
 def summary():
     with open(OUTPUT_DIR / '7_runs.csv') as f:
-        runs = [r for r in csv.DictReader(f) if r['rep'] != '0']   # rep 0 = demonstration runs
+        runs = [r for r in csv.DictReader(f) if r['rep'] != '0']
     groups = {}
     for r in runs:
         groups.setdefault((r['engine'], r['workload'], int(r['clients'])), []).append(r)

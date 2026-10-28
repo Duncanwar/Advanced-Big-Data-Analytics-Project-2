@@ -1,5 +1,4 @@
 -- 2.2 Checks: row counts, roles, transfer audit totals, constraints, indexes, sizes.
---   psql -d momo -f sql/04_checks.sql
 \pset footer off
 
 \echo '=== row counts (expected 228000 / 248000 / 228600 / 285600 / 20003300)'

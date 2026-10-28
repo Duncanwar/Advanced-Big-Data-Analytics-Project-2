@@ -1,8 +1,4 @@
-"""6.1 Correctness: run all 61 cases on both engines, normalize, sort and compare exactly.
-
-  python compare.py                    # 61 cases with the original Q7 SQL, plus Q7 paths and CSV checks
-  python compare.py --q7 bidir --only Q7   # 6.3 recheck of the 12 Q7 cases with the improved SQL
-"""
+"""6.1 Correctness: run all 61 cases on both engines, normalize, sort and compare exactly."""
 import argparse
 import csv
 import json
@@ -66,7 +62,6 @@ def check_q7_paths(results):
 def check_csv():
     """Independent checks against the captured CSV rows, without either database."""
     print('\n-- independent CSV checks (data/*.csv, plain Python)')
-    # Set C: account 206976 is only observed from day 11, so the overlap is a real partial interval.
     account, other, device = SETS['C'][0], 206976, 206976
     rows = {}
     with open(DATA_DIR / 'account_devices.csv', newline='') as f:

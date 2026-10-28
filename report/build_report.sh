@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # Build the report from report/report.md:
-#   Project2_Report.docx  (editable Word version, via pandoc)
-#   Project2_Report.pdf   (print version, via pandoc HTML + headless Chrome)
-#   report/build_report.sh
 set -euo pipefail
 cd "$(dirname "$0")"
 OUT=Project2_Report

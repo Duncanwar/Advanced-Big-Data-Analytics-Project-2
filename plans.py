@@ -1,9 +1,4 @@
-"""6.2 / 6.3 Execution plans, collected outside timing.
-
-  python plans.py pg       # EXPLAIN (ANALYZE, BUFFERS) for Q2, Q4 B depth 10, Q7 B bound 6 (both SQL versions)
-  python plans.py neo      # PROFILE for the same three cases
-Plans are saved to outputs/plans/ and a short digest is printed.
-"""
+"""6.2 / 6.3 Execution plans, collected outside timing."""
 import sys
 
 import db

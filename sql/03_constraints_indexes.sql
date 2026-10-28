@@ -1,5 +1,4 @@
 -- 2.1 keys and 2.2 indexes, applied after the bulk load and timed separately.
---   psql -d momo -f sql/03_constraints_indexes.sql
 SET maintenance_work_mem = '512MB';
 \timing on
 

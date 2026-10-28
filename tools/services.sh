@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 # Start/stop/status for the two project database services, so timing runs one service at a time.
-#   tools/services.sh pg stop|start|status
-#   tools/services.sh neo stop|start|status
-# PostgreSQL runs from Postgres.app; it is restarted with the same options Postgres.app used
-# (recorded in postmaster.opts), so the app keeps working as before.
 set -euo pipefail
 PGBIN=/Applications/Postgres.app/Contents/Versions/16/bin
 PGDATA="$HOME/Library/Application Support/Postgres/var-16"

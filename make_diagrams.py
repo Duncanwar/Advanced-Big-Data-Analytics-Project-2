@@ -46,7 +46,6 @@ def relational():
     transfers = table(ax, 2.2, 3.9, 'transfers', [('transfer_id', 'BIGINT', 'PK'), ('sender_id', 'INTEGER', 'FK'),
                                                   ('receiver_id', 'INTEGER', 'FK'), ('occurred_at', 'BIGINT', ''),
                                                   ('amount_rwf', 'INTEGER', '')], width=4.0)
-    # FK -> PK arrows (ownership, device use, both transfer endpoints)
     link(ax, (accounts['customer_id'][0], accounts['customer_id'][2]),
          (customers['customer_id'][1], customers['customer_id'][2]))
     link(ax, (usage['account_id'][0], usage['account_id'][2]), (accounts['account_id'][1], accounts['account_id'][2]), 0.25)
@@ -88,7 +87,6 @@ def graph():
     node(ax, 11.2, 4.0, 'Device', '{device_id:int, access_type}', ORANGE)
     edge(ax, (3.1, 4.0), (5.2, 4.0), ':OWNS', '248,000; one per account')
     edge(ax, (7.8, 4.0), (9.9, 4.0), ':USED_DEVICE', '{first_day, last_day,\nobservations:int}')
-    # Self-loop below the Account node: TRANSFER goes from one Account to another Account.
     ax.add_patch(FancyArrowPatch((5.7, 3.45), (7.3, 3.45), arrowstyle='-|>', mutation_scale=16, color=MUTED,
                                  linewidth=1.6, connectionstyle='arc3,rad=1.2'))
     ax.text(6.5, 1.85, ':TRANSFER  (Account to Account, one relationship per event)', color=INK, fontsize=10.5,
